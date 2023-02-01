@@ -1,7 +1,15 @@
+import { usePathname } from "next/navigation";
+
+let pathName: string;
+
+function getURL() {
+  pathName = usePathname();
+}
+
 export default function Head() {
   return (
     <>
-      <title>Create Next App</title>
+      <title>{pathName}</title>
     </>
   );
 }

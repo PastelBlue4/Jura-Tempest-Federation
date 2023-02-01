@@ -7,7 +7,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head />
+      <head title="Romuru Tech Blog" />
       {children}
     </html>
   );
