@@ -6,9 +6,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head title="Romuru Tech Blog" />
-      {children}
+    <html lang="ko">
+      <head />
+      <body>
+        <div>{children}</div>
+      </body>
     </html>
   );
 }
