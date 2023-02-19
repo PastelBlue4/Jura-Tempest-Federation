@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import StackItem from "@components/stackItem";
 import Head from "next/head";
 import Link from "next/link";
-
+import { classNameHandler } from "@libs/client/classNameHandler";
 export default function Resume() {
   const [isCommentOpen, setIsCommentOpen] = useState(false);
   return (
@@ -13,18 +13,30 @@ export default function Resume() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/icon.jpg" />
       </Head>
-      <section className="flex justify-center w-full items-center flex-col border mt-4 ">
+
+      <section className="flex justify-center w-full items-center flex-col mt-4 transition-all ">
         <h1 className="text-4xl font-semibold">
-          Hi, I&#39;m <span className="text-sky-300">Romuru!</span>
+          Hi, I&#39;m <span className="text-sky-300 ">Romuru!</span>
         </h1>
 
         <div className="flex justify-center items-center flex-col">
-          <div className="w-1/2 mt-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-            earum atque quia eligendi. Fugiat alias ullam quibusdam, facere
-            optio animi incidunt itaque consequatur id atque quae iste placeat
-            commodi reiciendis!
-            <button className="fixed ml-28">
+          <div className="w-1/2 mt-4 ">
+            <span className="z-10">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Blanditiis earum atque quia eligendi. Fugiat alias ullam
+              quibusdam, facere optio animi incidunt itaque consequatur id atque
+              quae iste placeat commodi reiciendis!
+            </span>
+
+            <button
+              className={classNameHandler(
+                "fixed ml-36 z-10 transition-all text-2xl",
+                isCommentOpen ? "rotate-180" : ""
+              )}
+              onClick={() => {
+                setIsCommentOpen(!isCommentOpen);
+              }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -40,15 +52,24 @@ export default function Resume() {
                 />
               </svg>
             </button>
-            <div>
+            <div
+              className={classNameHandler(
+                isCommentOpen ? "" : " -mt-20 opacity-0 invisible",
+                " transition-all overflow-hidden mt-2"
+              )}
+            >
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Blanditiis earum atque quia eligendi. Fugiat alias ullam
               quibusdam, facere optio animi incidunt itaque consequatur id atque
-              quae iste placeat commodi reiciendis!
+              quae iste placeat commodi reiciendis! Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Blanditiis earum atque quia
+              eligendi. Fugiat alias ullam quibusdam, facere optio animi
+              incidunt itaque consequatur id atque quae iste placeat commodi
+              reiciendis!
             </div>
           </div>
 
-          <h2 className="text-3xl">contact me</h2>
+          <h2 className="text-3xl mt-4">contact me</h2>
 
           <span>pastel0721@naver.com</span>
           <div className="flex space-x-3">
@@ -62,28 +83,52 @@ export default function Resume() {
         </div>
       </section>
 
-      <section className="flex justify-center w-full items-center flex-col border mt-4 ">
-        <h1 className="text-3xl font-semibold">
+      <section className="flex justify-center w-full items-center flex-col mt-4 ">
+        <h1 className="text-3xl font-semibold mb-4">
           <span className="text-sky-300">Stacks</span>
         </h1>
-
-        <ul className="w-1/2 grid grid-cols-3">
-          <StackItem stackName="React" logo="/dds" level="Main">
-            <div className="">dsds</div>
-          </StackItem>
-
-          <StackItem stackName="React" logo="/dds" level="Main">
+        <div className="w-1/2 grid grid-cols-2 md:grid-cols-5  gap-y-2">
+          <StackItem stackName="HTML" logo="/html.png">
             <div>dsds</div>
           </StackItem>
 
-          <StackItem stackName="React" logo="/dds" level="Main">
+          <StackItem stackName="CSS" logo="/css.png">
             <div>dsds</div>
           </StackItem>
-        </ul>
+
+          <StackItem stackName="JavaScript" logo="/js.png">
+            <div>dsds</div>
+          </StackItem>
+          <StackItem stackName="TypeScript" logo="/ts.png">
+            <div>dsds</div>
+          </StackItem>
+          <StackItem stackName="React" logo="/react.png">
+            <div>dsds</div>
+          </StackItem>
+
+          <StackItem stackName="Next.js" logo="/nextjs.png">
+            <div>dsds</div>
+          </StackItem>
+          <StackItem stackName="SWR" logo="/swr.jpeg">
+            <div>dsds</div>
+          </StackItem>
+
+          <StackItem stackName="TailwindCSS" logo="/tailwind.png">
+            <div>dsds</div>
+          </StackItem>
+
+          <StackItem stackName="Prisma" logo="/prisma.webp">
+            <div>dsds</div>
+          </StackItem>
+
+          <StackItem stackName="PlanetScale" logo="/pscale.png">
+            <div>dsds</div>
+          </StackItem>
+        </div>
       </section>
 
-      <section className="flex justify-center w-full items-center flex-col border mt-4 ">
-        <h1 className="text-3xl font-semibold">
+      <section className="flex justify-center w-full items-center flex-col  mt-4 ">
+        <h1 className=" text-3xl font-semibold mb-10">
           <span className="text-sky-300">Personal Project</span>
         </h1>
 
@@ -111,8 +156,8 @@ export default function Resume() {
         </ul>
       </section>
 
-      <section className="flex justify-center w-full items-center flex-col border mt-4 ">
-        <h1 className="text-3xl font-semibold">
+      <section className="flex justify-center w-full items-center flex-col mt-4 ">
+        <h1 className="text-3xl font-semibold mb-10">
           <span className="text-sky-300">Expernice</span>
         </h1>
 

@@ -2,37 +2,35 @@ import Image from "next/image";
 import React, { ReactNode } from "react";
 
 interface StackItemTypes {
-  children: ReactNode;
+  children?: ReactNode;
   stackName: string;
   logo: string;
-  level: "Main" | "Sub";
 }
 
 export default function StackItem({
   children,
   stackName,
   logo,
-  level,
 }: StackItemTypes) {
   return (
     <>
-      <li className="flex">
-        <div className=" border-4 hover:scale-110 transition-all ">
-          <div className="relative w-14 h-14  ">
-            <Image
-              src={logo}
-              alt={stackName}
-              fill
-              className="bg-sky-300 rounded-full"
-            />
+      <div className="group flex justify-center ">
+        <div className="flex items-center flex-col hover:scale-110 transition-all duration-100 ">
+          <Image
+            src={logo}
+            alt={stackName}
+            className=" rounded-full border-2 border-gray-200 p-[2px] shadow-lg "
+            width={80}
+            height={80}
+          />
+
+          <div className="transition-all  flex relative justify-center opacity-0 group-hover:opacity-100 border">
+            <span className="absolute bg-gray-300 text-gray-800 px-2 -top-2 rounded-md ">
+              {stackName}
+            </span>
           </div>
-          <div className="flex justify-between w-24">
-            <span>{stackName}</span>
-            <span>{level}</span>
-          </div>
-          <span>{children}</span>
         </div>
-      </li>
+      </div>
     </>
   );
 }
