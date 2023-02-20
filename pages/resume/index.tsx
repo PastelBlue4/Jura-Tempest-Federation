@@ -5,7 +5,6 @@ import Link from "next/link";
 import { classNameHandler } from "@libs/client/classNameHandler";
 import Image from "next/image";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
-import { Socket } from "dgram";
 
 export default function Resume() {
   const data = [
@@ -62,15 +61,22 @@ export default function Resume() {
   ];
 
   const [isCommentOpen, setIsCommentOpen] = useState(false);
-  const [stackIndex, setStackIndex] = useState("");
+  const [isStackOpen, setIsStackOpen] = useState(false);
 
-  const getStackIndex = (index: string): any => {
-    setStackIndex((prev) => {
-      if (index === prev) {
-        return "";
-      }
-      return index;
-    });
+  const stackHandler = (currentTarget: HTMLDivElement, index: number): any => {
+    if (!isStackOpen) {
+      setIsStackOpen(true);
+      scroll.scrollTo(currentTarget.offsetTop + index * 230, {
+        smooth: true,
+        duration: 500,
+      });
+    }
+    if (isStackOpen) {
+      setIsStackOpen(false);
+      scroll.scrollToTop();
+    }
+    console.log(index);
+    console.log(currentTarget.offsetTop);
   };
 
   return (
@@ -204,7 +210,7 @@ export default function Resume() {
               id="gridContainer"
               className={classNameHandler(
                 "w-5/6 transition-all relative ",
-                stackIndex
+                isStackOpen
                   ? "grid grid-cols-1  transition-all gap-y-4 relative "
                   : "grid grid-cols-4  md:grid-cols-8 gap-y-2"
               )}
@@ -212,38 +218,26 @@ export default function Resume() {
               {data.map((item, index) => {
                 return (
                   <div
-                    id={item.stackName}
-                    onClick={(e) => {
-                      if (!stackIndex) {
-                        scroll.scrollTo(
-                          e.currentTarget.offsetTop + index * 230,
-                          {
-                            smooth: true,
-                            duration: 500,
-                          }
-                        );
-                      } else if (stackIndex === e.currentTarget.id) {
-                        scroll.scrollToTop();
-                      }
-                    }}
                     className={classNameHandler(
                       "flex",
-                      stackIndex
+                      isStackOpen
                         ? "justify-start items-center h-52 p-2"
                         : "justify-center"
                     )}
                     key={index}
                   >
-                    <StackItem
-                      logo={item.logo}
-                      stackName={item.stackName}
-                      getStackIndex={getStackIndex}
-                    />
-
+                    <div
+                      id={item.stackName}
+                      onClick={(e) => {
+                        stackHandler(e.currentTarget, index);
+                      }}
+                    >
+                      <StackItem logo={item.logo} stackName={item.stackName} />
+                    </div>
                     <div
                       className={classNameHandler(
                         " bg-gray-100",
-                        stackIndex
+                        isStackOpen
                           ? "ml-4 text-lg w-full h-full"
                           : "visible opacity-0 w-0 h-0"
                       )}
@@ -263,13 +257,13 @@ export default function Resume() {
             <div
               className={classNameHandler(
                 "relative flex flex-col w-5/6 transition-all",
-                stackIndex ? "pb-40" : ""
+                isStackOpen ? "pb-40" : ""
               )}
             >
               <div
                 className={classNameHandler(
                   "-z-10 transition-all ease-in-out overflow-hidden mt-4 absolute text-lg w-full",
-                  stackIndex ? "" : "opacity-0 invisible"
+                  isStackOpen ? "" : "opacity-0 invisible"
                 )}
               >
                 <div className="flex p-3 transition-all bg-gray-200 ">
@@ -335,7 +329,6 @@ export default function Resume() {
               </li>
             </ul>
           </section>
-          <div className="h-screen bg-red-300"></div>
         </div>
       </div>
     </>

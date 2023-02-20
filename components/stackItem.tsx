@@ -6,23 +6,16 @@ interface StackItemTypes {
   children?: ReactNode;
   stackName: string;
   logo: string;
-  getStackIndex: (index: string) => string;
 }
 
 export default function StackItem({
   children,
   stackName,
   logo,
-  getStackIndex,
 }: StackItemTypes) {
   return (
     <>
-      <div
-        className="relative flex justify-center"
-        onClick={() => {
-          getStackIndex(stackName);
-        }}
-      >
+      <div className="relative flex justify-center">
         <div
           className={classNameHandler(
             "flex flex-col items-center transition-all duration-100 hover:scale-110  cursor-pointer group"
