@@ -1,5 +1,6 @@
+import { classNameHandler } from "@libs/client/classNameHandler";
 import Image from "next/image";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 
 interface StackItemTypes {
   children?: ReactNode;
@@ -17,16 +18,20 @@ export default function StackItem({
   return (
     <>
       <div
-        className="flex justify-center cursor-pointer group"
+        className="flex justify-center transition-all "
         onClick={() => {
           getStackIndex(stackName);
         }}
       >
-        <div className="flex flex-col items-center transition-all duration-100 hover:scale-110 ">
+        <div
+          className={classNameHandler(
+            "flex flex-col items-center transition-all duration-100 hover:scale-125  cursor-pointer group"
+          )}
+        >
           <Image
             src={logo}
             alt={stackName}
-            className=" rounded-full border-2 border-gray-200 p-[2px] shadow-lg "
+            className=" rounded-full border-2 border-gray-200 p-[2px] shadow-lg transition-all  "
             width={80}
             height={80}
           />
