@@ -18,22 +18,22 @@ export default function StackItem({
   return (
     <>
       <div
-        className="flex justify-center transition-all "
+        className="relative flex justify-center"
         onClick={() => {
           getStackIndex(stackName);
         }}
       >
         <div
           className={classNameHandler(
-            "flex flex-col items-center transition-all duration-100 hover:scale-125  cursor-pointer group"
+            "flex flex-col items-center transition-all duration-100 hover:scale-110  cursor-pointer group"
           )}
         >
           <Image
             src={logo}
             alt={stackName}
-            className=" rounded-full border-2 border-gray-200 p-[2px] shadow-lg transition-all  "
-            width={80}
-            height={80}
+            className=" rounded-full border-2 border-gray-200 -z-10 p-[2px] shadow-lg relative  "
+            width={70}
+            height={70}
           />
 
           <div className="relative flex justify-center transition-all border opacity-0 group-hover:opacity-100">

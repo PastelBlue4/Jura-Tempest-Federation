@@ -4,18 +4,61 @@ import Head from "next/head";
 import Link from "next/link";
 import { classNameHandler } from "@libs/client/classNameHandler";
 import Image from "next/image";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import { Socket } from "dgram";
+
 export default function Resume() {
   const data = [
-    { stackName: "HTML", logo: "/html.png" },
-    { stackName: "CSS", logo: "/css.png" },
-    { stackName: "JavaScript", logo: "/js.png" },
-    { stackName: "TypeScript", logo: "/ts.png" },
-    { stackName: "React", logo: "/react.png" },
-    { stackName: "Next.js", logo: "/nextjs.png" },
-    { stackName: "SWR", logo: "/swr.jpg" },
-    { stackName: "TailwindCSS", logo: "/tailwind.png" },
-    { stackName: "Prisma", logo: "/prisma.webp" },
-    { stackName: "PlanetScale", logo: "/pscale.png" },
+    {
+      stackName: "HTML",
+      logo: "/html.png",
+      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
+    },
+    {
+      stackName: "CSS",
+      logo: "/css.png",
+      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
+    },
+    {
+      stackName: "JavaScript",
+      logo: "/js.png",
+      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
+    },
+    {
+      stackName: "TypeScript",
+      logo: "/ts.png",
+      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
+    },
+    {
+      stackName: "React",
+      logo: "/react.png",
+      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
+    },
+    {
+      stackName: "Next.js",
+      logo: "/nextjs.png",
+      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
+    },
+    {
+      stackName: "SWR",
+      logo: "/swr.jpg",
+      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
+    },
+    {
+      stackName: "TailwindCSS",
+      logo: "/tailwind.png",
+      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
+    },
+    {
+      stackName: "Prisma",
+      logo: "/prisma.webp",
+      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
+    },
+    {
+      stackName: "PlanetScale",
+      logo: "/pscale.png",
+      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
+    },
   ];
 
   const [isCommentOpen, setIsCommentOpen] = useState(false);
@@ -38,6 +81,7 @@ export default function Resume() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/icon.jpg" />
       </Head>
+
       <div className="flex flex-col items-center ">
         <div className="w-full max-w-screen-xl ">
           <section className="relative">
@@ -82,7 +126,7 @@ export default function Resume() {
             </div>
           </section>
           <section className="flex flex-col items-center justify-center w-full mt-10 transition-all lg:mt-20 ">
-            <h1 className="w-5/6 pb-2 text-4xl font-semibold border-b-2 border-spacing-y-20">
+            <h1 className="w-5/6 pb-2 text-4xl font-semibold border-b-2 ">
               Hi, I&#39;m <span className="text-sky-300 ">Romuru</span>
               <p className="mt-2 text-xl font-semibold">
                 안녕하세요!{" "}
@@ -152,24 +196,41 @@ export default function Resume() {
             </div>
           </section>
           <section className="relative flex flex-col items-center justify-center w-full mt-4 transition-all">
-            <h1 className="mb-4 text-3xl font-semibold">
-              <span className="text-sky-300 ">Stacks</span>
+            <h1 className="w-5/6 pb-2 mb-4 text-4xl font-semibold border-b-2 ">
+              <span className=" text-sky-300">Stacks</span>
             </h1>
 
             <div
+              id="gridContainer"
               className={classNameHandler(
-                "w-5/6 transition-all ",
+                "w-5/6 transition-all relative ",
                 stackIndex
-                  ? "grid grid-cols-1  gap-y-4 relative "
-                  : "grid grid-cols-4  md:grid-cols-8"
+                  ? "grid grid-cols-1  transition-all gap-y-4 relative "
+                  : "grid grid-cols-4  md:grid-cols-8 gap-y-2"
               )}
             >
               {data.map((item, index) => {
                 return (
                   <div
+                    id={item.stackName}
+                    onClick={(e) => {
+                      if (!stackIndex) {
+                        scroll.scrollTo(
+                          e.currentTarget.offsetTop + index * 230,
+                          {
+                            smooth: true,
+                            duration: 500,
+                          }
+                        );
+                      } else if (stackIndex === e.currentTarget.id) {
+                        scroll.scrollToTop();
+                      }
+                    }}
                     className={classNameHandler(
-                      "flex transition-all border",
-                      stackIndex ? "justify-start h-52 p-4" : "justify-center"
+                      "flex",
+                      stackIndex
+                        ? "justify-start items-center h-52 p-2"
+                        : "justify-center"
                     )}
                     key={index}
                   >
@@ -178,6 +239,22 @@ export default function Resume() {
                       stackName={item.stackName}
                       getStackIndex={getStackIndex}
                     />
+
+                    <div
+                      className={classNameHandler(
+                        " bg-gray-100",
+                        stackIndex
+                          ? "ml-4 text-lg w-full h-full"
+                          : "visible opacity-0 w-0 h-0"
+                      )}
+                    >
+                      <div className="flex flex-col border-2 border-red-400 ">
+                        {item.contents &&
+                          item.contents.map((contents, index) => {
+                            return <span key={index}>{contents}</span>;
+                          })}
+                      </div>
+                    </div>
                   </div>
                 );
               })}
@@ -195,15 +272,15 @@ export default function Resume() {
                   stackIndex ? "" : "opacity-0 invisible"
                 )}
               >
-                <div className="flex p-3 transition-all bg-red-300 ">
-                  <div>{stackIndex}</div>
+                <div className="flex p-3 transition-all bg-gray-200 ">
+                  <div>그래도 짱짱 열심히 하고 있다능</div>
                 </div>
               </div>
             </div>
           </section>
-          <section className="flex flex-col items-center justify-center w-full mt-4 ">
-            <h1 className="mb-10 text-3xl font-semibold ">
-              <span className="text-sky-300">Personal Project</span>
+          <section className="flex flex-col items-center justify-center w-full mt-10 ">
+            <h1 className="w-5/6 pb-2 mb-4 text-4xl font-semibold border-b-2 ">
+              <span className="text-sky-300 ">Personal Project</span>
             </h1>
 
             <ul className="w-5/6 space-y-2">
@@ -230,8 +307,8 @@ export default function Resume() {
               </li>
             </ul>
           </section>
-          <section className="flex flex-col items-center justify-center w-full mt-4 ">
-            <h1 className="mb-10 text-3xl font-semibold">
+          <section className="flex flex-col items-center justify-center w-full mt-10 ">
+            <h1 className="w-5/6 pb-2 mb-4 text-4xl font-semibold border-b-2">
               <span className="text-sky-300">Expernice</span>
             </h1>
 
@@ -258,6 +335,7 @@ export default function Resume() {
               </li>
             </ul>
           </section>
+          <div className="h-screen bg-red-300"></div>
         </div>
       </div>
     </>
