@@ -5,17 +5,24 @@ interface StackItemTypes {
   children?: ReactNode;
   stackName: string;
   logo: string;
+  getStackIndex: (index: string) => string;
 }
 
 export default function StackItem({
   children,
   stackName,
   logo,
+  getStackIndex,
 }: StackItemTypes) {
   return (
     <>
-      <div className="group flex justify-center ">
-        <div className="flex items-center flex-col hover:scale-110 transition-all duration-100 ">
+      <div
+        className="flex justify-center cursor-pointer group"
+        onClick={() => {
+          getStackIndex(stackName);
+        }}
+      >
+        <div className="flex flex-col items-center transition-all duration-100 hover:scale-110 ">
           <Image
             src={logo}
             alt={stackName}
@@ -24,8 +31,8 @@ export default function StackItem({
             height={80}
           />
 
-          <div className="transition-all  flex relative justify-center opacity-0 group-hover:opacity-100 border">
-            <span className="absolute bg-gray-300 text-gray-800 px-2 -top-2 rounded-md ">
+          <div className="relative flex justify-center transition-all border opacity-0 group-hover:opacity-100">
+            <span className="absolute px-2 text-gray-800 bg-gray-300 rounded-md -top-2 ">
               {stackName}
             </span>
           </div>
