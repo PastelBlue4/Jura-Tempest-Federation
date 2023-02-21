@@ -556,7 +556,7 @@ export default function Resume() {
           </section>
           <section
             id="Education"
-            className="flex flex-col items-center justify-center w-full mt-10 "
+            className="flex flex-col items-center justify-center w-full mt-10 mb-10 "
           >
             <h1 className="w-5/6 pb-2 mb-4 text-4xl font-semibold border-b-2">
               <span className="text-sky-300">Education</span>
