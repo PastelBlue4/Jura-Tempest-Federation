@@ -122,7 +122,7 @@ export default function Resume() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-9 h-9"
+                  className="w-6 h-6"
                 >
                   <path
                     strokeLinecap="round"
@@ -145,7 +145,7 @@ export default function Resume() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-9 h-9"
+                  className="w-6 h-6"
                 >
                   <path
                     strokeLinecap="round"
@@ -167,7 +167,7 @@ export default function Resume() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="-mt-[1px] w-9 h-9"
+                  className="-mt-[1px] w-6 h-6"
                 >
                   <path
                     strokeLinecap="round"
@@ -189,7 +189,7 @@ export default function Resume() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-9 h-9"
+                  className="w-6 h-6"
                 >
                   <path
                     strokeLinecap="round"
@@ -211,7 +211,7 @@ export default function Resume() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-9 h-9 -mt-[1px]"
+                  className="w-6 h-6 -mt-[1px]"
                 >
                   <path
                     strokeLinecap="round"
@@ -256,7 +256,7 @@ export default function Resume() {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-9 h-9"
+                    className="w-6 h-6"
                   >
                     <path
                       strokeLinecap="round"
@@ -328,7 +328,7 @@ export default function Resume() {
                   </span>
                 </Link>
               </div>
-              <div className="flex justify-center space-x-4">
+              <div className="space-y-6 ">
                 <span className="flex items-center justify-between px-2 py-1 text-lg bg-gray-100 ">
                   <div className="flex gap-3 ">
                     <svg
@@ -361,7 +361,7 @@ export default function Resume() {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="w-5 h-5"
+                      className="w-6 h-6"
                     >
                       <path
                         strokeLinecap="round"
@@ -403,7 +403,7 @@ export default function Resume() {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="w-5 h-5"
+                      className="w-6 h-6"
                     >
                       <path
                         strokeLinecap="round"
