@@ -5,7 +5,8 @@ import Link from "next/link";
 import { classNameHandler } from "@libs/client/classNameHandler";
 import Image from "next/image";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
-import { text } from "stream/consumers";
+
+import CopyAction from "@components/copyAction";
 
 export default function Resume() {
   const data = [
@@ -65,6 +66,7 @@ export default function Resume() {
   const [isStackOpen, setIsStackOpen] = useState(false);
   const [isProjectOpen, setIsProjectOpen] = useState(false);
   const [isExperniceOpen, setIsExperniceOpen] = useState(false);
+  const [onCopy, setOnCopy] = useState({ toggle: false, copyTagert: "phone" });
 
   const stackHandler = (currentTarget: HTMLDivElement, index: number): any => {
     if (!isStackOpen) {
@@ -80,6 +82,14 @@ export default function Resume() {
     }
   };
 
+  const copyMessageHandler = (item: "phone" | "mail") => {
+    setOnCopy({ toggle: true, copyTagert: item });
+
+    setTimeout(() => {
+      setOnCopy({ toggle: false, copyTagert: item });
+    }, 2000);
+  };
+
   return (
     <>
       <Head>
@@ -91,11 +101,19 @@ export default function Resume() {
 
       <div className="relative flex flex-col items-center h-auto bg-gray-50 ">
         <div className="w-full max-w-screen-xl ">
+          <div
+            className={classNameHandler(
+              "transition-all duration-300",
+              onCopy.toggle ? "opacity-100" : "opacity-0 visible "
+            )}
+          >
+            <CopyAction item={onCopy.copyTagert} />
+          </div>
           <section className="fixed bottom-0 z-50 flex justify-center w-full max-w-screen-xl">
-            <div className="flex items-center w-full h-20 border-t border-gray-300 justify-evenly bg-sky-50">
+            <div className="flex w-full h-20 border-t border-gray-300 items-stat justify-evenly bg-sky-50">
               <ScrollLink
-                offset={-300}
-                className="flex flex-col items-center mb-3 space-y-1 text-xs cursor-pointer hover:text-sky-300"
+                offset={-30}
+                className="flex flex-col items-center mt-2 space-y-1 text-xs cursor-pointer hover:text-sky-300"
                 to="ContactMe"
               >
                 <svg
@@ -104,7 +122,7 @@ export default function Resume() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-8 h-8"
+                  className="w-9 h-9"
                 >
                   <path
                     strokeLinecap="round"
@@ -117,8 +135,8 @@ export default function Resume() {
               </ScrollLink>
 
               <ScrollLink
-                offset={-300}
-                className="flex flex-col items-center mb-3 space-y-1 text-xs cursor-pointer hover:text-sky-300"
+                offset={-30}
+                className="flex flex-col items-center mt-2 space-y-1 text-xs cursor-pointer hover:text-sky-300"
                 to="Stacks"
               >
                 <svg
@@ -127,7 +145,7 @@ export default function Resume() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-8 h-8"
+                  className="w-9 h-9"
                 >
                   <path
                     strokeLinecap="round"
@@ -139,8 +157,8 @@ export default function Resume() {
                 <span>Stacks</span>
               </ScrollLink>
               <ScrollLink
-                offset={-300}
-                className="flex flex-col items-center mb-3 space-y-1 text-xs cursor-pointer hover:text-sky-300"
+                offset={-30}
+                className="flex flex-col items-center mt-2 space-y-1 text-xs cursor-pointer hover:text-sky-300"
                 to="PersonalProject"
               >
                 <svg
@@ -149,7 +167,7 @@ export default function Resume() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-8 h-8"
+                  className="-mt-[1px] w-9 h-9"
                 >
                   <path
                     strokeLinecap="round"
@@ -158,11 +176,11 @@ export default function Resume() {
                   />
                 </svg>
 
-                <span>Personal Project</span>
+                <span>Project</span>
               </ScrollLink>
               <ScrollLink
-                offset={-300}
-                className="flex flex-col items-center mb-3 space-y-1 text-xs cursor-pointer hover:text-sky-300"
+                offset={-30}
+                className="flex flex-col items-center mt-2 space-y-1 text-xs cursor-pointer hover:text-sky-300"
                 to="Expernice"
               >
                 <svg
@@ -171,7 +189,7 @@ export default function Resume() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-8 h-8"
+                  className="w-9 h-9"
                 >
                   <path
                     strokeLinecap="round"
@@ -183,8 +201,8 @@ export default function Resume() {
                 <span>Expernice</span>
               </ScrollLink>
               <ScrollLink
-                offset={-300}
-                className="flex flex-col items-center mb-3 space-y-1 text-xs cursor-pointer hover:text-sky-300"
+                offset={-30}
+                className="flex flex-col items-center mt-2 space-y-1 text-xs cursor-pointer hover:text-sky-300"
                 to="Education"
               >
                 <svg
@@ -193,7 +211,7 @@ export default function Resume() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-8 h-8"
+                  className="w-9 h-9 -mt-[1px]"
                 >
                   <path
                     strokeLinecap="round"
@@ -206,7 +224,6 @@ export default function Resume() {
               </ScrollLink>
             </div>
           </section>
-
           <section className="flex flex-col items-center justify-center w-full mt-10 transition-all lg:mt-20 ">
             <h1 className="w-5/6 pb-2 text-4xl font-semibold border-b-2 ">
               Hi, I&#39;m <span className="text-sky-300 ">Romuru</span>
@@ -239,7 +256,7 @@ export default function Resume() {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-8 h-8"
+                    className="w-9 h-9"
                   >
                     <path
                       strokeLinecap="round"
@@ -277,13 +294,12 @@ export default function Resume() {
               </div>
             </div>
           </section>
-
-          <section id="ContactMe">
+          <section id="ContactMe" className="mt-10">
             <div className="flex flex-col items-center ">
               <h1 className="w-5/6 pb-2 mb-4 text-4xl font-semibold border-b-2 ">
                 <span className=" text-sky-300">Contact Me</span>
               </h1>
-              <span>pastel0721@naver.com</span>
+
               <div className="flex my-4 space-x-3">
                 <Link
                   target="_black"
@@ -312,9 +328,94 @@ export default function Resume() {
                   </span>
                 </Link>
               </div>
+              <div className="flex justify-center space-x-4">
+                <span className="flex items-center justify-between px-2 py-1 text-lg bg-gray-100 ">
+                  <div className="flex gap-3 ">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="box-content w-6 h-6 pr-3 border-r-2 border-gray-500"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                      />
+                    </svg>
+                    <span>010-8408-6414</span>
+                  </div>
+
+                  <span
+                    className="ml-6 cursor-pointer "
+                    onClick={() => {
+                      navigator.clipboard.writeText("010-8408-6414");
+                      copyMessageHandler("phone");
+                    }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-5 h-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+
+                <span className="flex items-center justify-between px-2 py-1 text-lg bg-gray-100">
+                  <div className="flex gap-3 ">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="box-content w-6 h-6 pr-3 border-r-2 border-gray-500"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                      />
+                    </svg>
+                    <span>pastel0721@naver.com</span>
+                  </div>
+                  <span
+                    className="ml-6 cursor-pointer "
+                    onClick={() => {
+                      navigator.clipboard.writeText("pastel0721@naver.com");
+                      copyMessageHandler("mail");
+                    }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-5 h-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </div>
             </div>
           </section>
-
           <section
             id="Stacks"
             className="relative flex flex-col items-center justify-center w-full mt-4 transition-all"
@@ -453,7 +554,6 @@ export default function Resume() {
               </li>
             </ul>
           </section>
-
           <section
             id="Education"
             className="flex flex-col items-center justify-center w-full mt-10 "
