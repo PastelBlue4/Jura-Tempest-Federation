@@ -15,25 +15,24 @@ export default function StackItem({
 }: StackItemTypes) {
   return (
     <>
-      <div className="relative flex justify-center">
+      <div className="relative flex justify-center group">
         <div
           className={classNameHandler(
-            "flex flex-col items-center transition-all duration-100 hover:scale-110  cursor-pointer group"
+            "flex flex-col items-center relative duration-700 ease-in-out  hover:scale-110 cursor-pointer group w-20 h-20"
           )}
         >
           <Image
             src={logo}
             alt={stackName}
-            className=" rounded-full border-2 border-gray-200 -z-10 p-[2px] shadow-lg relative  "
+            className=" rounded-full border-2 border-gray-200 p-[2px] shadow-lg absolute "
             width={70}
             height={70}
           />
-
-          <div className="relative flex justify-center transition-all border opacity-0 group-hover:opacity-100">
-            <span className="absolute px-2 text-gray-800 bg-gray-300 rounded-md -top-2 ">
-              {stackName}
-            </span>
-          </div>
+        </div>
+        <div className="absolute z-20 flex justify-center transition-all opacity-0 bottom-2 group-hover:opacity-100">
+          <span className="absolute px-2 text-gray-800 bg-gray-300 rounded-md ">
+            {stackName}
+          </span>
         </div>
       </div>
     </>
