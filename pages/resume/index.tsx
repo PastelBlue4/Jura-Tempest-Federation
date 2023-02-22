@@ -99,17 +99,17 @@ export default function Resume() {
         <link rel="icon" href="/icon.jpg" />
       </Head>
 
-      <div className="relative flex flex-col items-center h-auto bg-gray-50 ">
-        <div className="w-full max-w-screen-xl ">
+      <div className="relative z-50 flex flex-col items-center h-auto bg-gray-50 ">
+        <div className="w-full max-w-screen-lg ">
           <div
             className={classNameHandler(
-              "transition-all duration-300",
+              " z-50 w-full flex justify-center",
               onCopy.toggle ? "opacity-100" : "opacity-0 visible "
             )}
           >
             <CopyAction item={onCopy.copyTagert} />
           </div>
-          <section className="fixed bottom-0 z-50 flex justify-center w-full max-w-screen-xl">
+          <section className="fixed bottom-0 z-50 flex justify-center w-full max-w-screen-lg ">
             <div className="flex w-full h-20 border-t border-gray-300 items-stat justify-evenly bg-sky-50">
               <ScrollLink
                 offset={-30}
@@ -225,19 +225,20 @@ export default function Resume() {
             </div>
           </section>
           <section className="flex flex-col items-center justify-center w-full mt-10 transition-all lg:mt-20 ">
-            <h1 className="w-5/6 pb-2 text-4xl font-semibold border-b-2 ">
-              Hi, I&#39;m <span className="text-sky-300 ">Romuru</span>
-              <p className="mt-2 text-2xl font-semibold">
-                안녕하세요!{" "}
-                <span className="font-bold">배우고 나눔에 거리낌 없는</span>{" "}
-                이찬우 입니다.
-              </p>
+            <h1 className="w-11/12 pb-2 text-3xl font-semibold border-b-2 text-sky-400 ">
+              Hi, I&#39;m Romuru
             </h1>
 
-            <div className="relative flex flex-col items-center justify-center w-5/6 ">
+            <div className="relative flex flex-col items-center justify-center w-11/12 ">
+              <p className="flex flex-col mt-6 text-2xl font-semibold ">
+                <span className="">안녕하세요!</span>
+                <span className="mt-1 text-2xl ">
+                  배우고 나눔에 거리낌 없는 이찬우 입니다.
+                </span>
+              </p>
               <div
                 className={classNameHandler(
-                  "mt-6 relative transition-all duration-500 bg-gray-100 py-3 px-5 w-full",
+                  "mt-6 relative transition-all duration-700 bg-gray-100 py-3 px-5 w-full ",
                   isCommentOpen ? "pb-[400px] " : ""
                 )}
               >
@@ -265,30 +266,38 @@ export default function Resume() {
                     />
                   </svg>
                 </button>
-                <div className="tracking-wide">
+                <div className="relative ">
                   <span className="text-lg">
-                    <ul className="my-2 space-y-2 text-2xl list-disc list-inside ">
-                      <span className="font-bold">저는 항상</span>
-                      <li className="mt-5 text-base">
-                        궁극적으로 해결 해야하는 문제가 무엇인지 고민합니다.
+                    <ul className="my-2 space-y-4 text-2xl tracking-wide list-disc list-inside ">
+                      <span className="font-semibold">저는 항상,</span>
+                      <li className="mt-5 text-lg leading-relaxed">
+                        지금 직면한 문제를 넘어,{" "}
+                        <span className=" bg-sky-100"> 본질적으로</span>해결
+                        해야하는 문제가 무엇인지 고민해요.
                       </li>
-                      <li className="text-base">
-                        무엇이 사용자를 진정으로 만족시킬 수 있는지 고민합니다.
+                      <li className="text-lg leading-relaxed">
+                        사용자를 만족시킬 수 있는{" "}
+                        <span className=" bg-sky-100">UX/UI</span>를 고민해요.
                       </li>
-                      <li className="text-base">
-                        동료와 같은 목표를 설정할 수 있는 소통이 무엇인지
-                        고민합니다.
+                      <li className="text-lg leading-relaxed">
+                        동료와 같은 목표를 나눌수 있게하는{" "}
+                        <span className=" bg-sky-100">소통</span>이 무엇인지
+                        고민해요.
                       </li>
                     </ul>
                   </span>
 
                   <div
                     className={classNameHandler(
-                      " transition-all ease-in-out  mt-1 absolute text-lg  p-1 duration-700",
-                      isCommentOpen ? "" : "   opacity-0 invisible"
+                      " transition-all ease-in-out  duration-500 mt-2 absolute text-lg leading-relaxed",
+                      isCommentOpen ? "" : "  opacity-0 invisible "
                     )}
                   >
-                    제가 알고있는 것들을 나누는것에
+                    <span>
+                      제가 알고있는 것들을 나누고, 교차검증을 하는 과정에 나도
+                      몰랐던 부분도 알게 되어 나눔이 곧 성장이라는 생각을 가지고
+                      있습니다.
+                    </span>
                   </div>
                 </div>
               </div>
@@ -296,8 +305,8 @@ export default function Resume() {
           </section>
           <section id="ContactMe" className="mt-10">
             <div className="flex flex-col items-center ">
-              <h1 className="w-5/6 pb-2 mb-4 text-4xl font-semibold border-b-2 ">
-                <span className=" text-sky-300">Contact Me</span>
+              <h1 className="w-11/12 pb-2 mb-4 text-3xl font-semibold border-b-2 ">
+                <span className=" text-sky-400">Contact Me</span>
               </h1>
 
               <div className="flex my-4 space-x-3">
@@ -420,14 +429,14 @@ export default function Resume() {
             id="Stacks"
             className="relative flex flex-col items-center justify-center w-full mt-4 transition-all"
           >
-            <h1 className="w-5/6 pb-2 mb-4 text-4xl font-semibold border-b-2 ">
-              <span className=" text-sky-300">Stacks</span>
+            <h1 className="w-11/12 pb-2 mb-4 text-3xl font-semibold border-b-2 ">
+              <span className=" text-sky-400">Stacks</span>
             </h1>
 
             <div
               id="gridContainer"
               className={classNameHandler(
-                "w-5/6 transition-all relative duration-500 ",
+                "w-11/12 transition-all relative duration-500 ",
                 isStackOpen
                   ? "grid grid-cols-1   gap-y-4 relative "
                   : "grid grid-cols-4  md:grid-cols-8 gap-y-2"
@@ -475,7 +484,7 @@ export default function Resume() {
 
             <div
               className={classNameHandler(
-                "relative flex flex-col w-5/6 transition-all",
+                "relative flex flex-col w-11/12 transition-all",
                 isStackOpen ? "pb-40" : ""
               )}
             >
@@ -495,11 +504,11 @@ export default function Resume() {
             id="PersonalProject"
             className="flex flex-col items-center justify-center w-full mt-10 "
           >
-            <h1 className="w-5/6 pb-2 mb-4 text-4xl font-semibold border-b-2 ">
-              <span className="text-sky-300 ">Personal Project</span>
+            <h1 className="w-11/12 pb-2 mb-4 text-3xl font-semibold border-b-2 ">
+              <span className="text-sky-400 ">Personal Project</span>
             </h1>
 
-            <ul className="w-5/6 space-y-2">
+            <ul className="w-11/12 space-y-2">
               <li>
                 <div className="flex justify-between ">
                   <span className="text-xl">캐럿마켓</span>
@@ -527,11 +536,11 @@ export default function Resume() {
             id="Expernice"
             className="flex flex-col items-center justify-center w-full mt-10 "
           >
-            <h1 className="w-5/6 pb-2 mb-4 text-4xl font-semibold border-b-2">
-              <span className="text-sky-300">Expernice</span>
+            <h1 className="w-11/12 pb-2 mb-4 text-3xl font-semibold border-b-2">
+              <span className="text-sky-400">Expernice</span>
             </h1>
 
-            <ul className="w-5/6 space-y-2">
+            <ul className="w-11/12 space-y-2">
               <li>
                 <div className="flex justify-between ">
                   <span>노마드코더 IT 5분 잡학사전 베타테스터</span>
@@ -558,11 +567,11 @@ export default function Resume() {
             id="Education"
             className="flex flex-col items-center justify-center w-full mt-10 mb-10 "
           >
-            <h1 className="w-5/6 pb-2 mb-4 text-4xl font-semibold border-b-2">
-              <span className="text-sky-300">Education</span>
+            <h1 className="w-11/12 pb-2 mb-4 text-3xl font-semibold border-b-2">
+              <span className="text-sky-400">Education</span>
             </h1>
 
-            <ul className="w-5/6 space-y-2">
+            <ul className="w-11/12 space-y-2">
               <li>
                 <div className="flex justify-between ">
                   <span>노마드코더 IT 5분 잡학사전 베타테스터</span>
@@ -584,8 +593,8 @@ export default function Resume() {
                 </div>
               </li>
             </ul>
+            <div className="w-11/12 h-screen bg-blue-100"></div>
           </section>
-          <div className="h-screen bg-blue-100"></div>
         </div>
       </div>
     </>
