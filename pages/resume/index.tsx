@@ -71,14 +71,14 @@ export default function Resume() {
   const stackHandler = (currentTarget: HTMLDivElement, index: number): any => {
     if (!isStackOpen) {
       setIsStackOpen(true);
-      scroll.scrollTo(currentTarget.offsetTop + index * 230, {
+      scroll.scrollTo(500 + index * 250, {
         smooth: true,
         duration: 500,
       });
     }
     if (isStackOpen) {
       setIsStackOpen(false);
-      scroll.scrollToTop();
+      scroll.scrollTo(700);
     }
   };
 
