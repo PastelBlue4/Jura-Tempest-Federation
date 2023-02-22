@@ -93,7 +93,7 @@ export default function Resume() {
   return (
     <>
       <Head>
-        <title>Romuru Resume | Jura Tempes Federation</title>
+        <title>Romuru Resume | Jura Tempest Federation</title>
         <meta name="description" content="Romuru's Resume" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/icon.jpg" />
