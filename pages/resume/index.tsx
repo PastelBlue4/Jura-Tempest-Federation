@@ -272,7 +272,7 @@ export default function Resume() {
                       <span className="font-semibold">저는 항상,</span>
                       <li className="mt-5 text-lg leading-relaxed">
                         지금 직면한 문제를 넘어,{" "}
-                        <span className=" bg-sky-100"> 본질적으로</span>해결
+                        <span className=" bg-sky-100"> 본질적으로 </span>해결
                         해야하는 문제가 무엇인지 고민해요.
                       </li>
                       <li className="text-lg leading-relaxed">
@@ -448,7 +448,7 @@ export default function Resume() {
                     className={classNameHandler(
                       "flex relative ",
                       isStackOpen
-                        ? "justify-start items-center h-52 p-2"
+                        ? "justify-start items-center h-52 "
                         : "justify-center"
                     )}
                     key={index}
@@ -464,9 +464,9 @@ export default function Resume() {
                     </div>
                     <div
                       className={classNameHandler(
-                        " bg-gray-100",
+                        " bg-gray-100 ",
                         isStackOpen
-                          ? "ml-4 text-lg w-full h-full"
+                          ? "ml-1 opacity-100 text-base w-full h-full transition duration-300   lg:text-lg "
                           : "visible opacity-0 w-0 h-0"
                       )}
                     >
