@@ -113,7 +113,7 @@ export default function Resume() {
             <div className="flex w-full h-20 border-t border-gray-300 items-stat justify-evenly bg-sky-50">
               <ScrollLink
                 offset={-30}
-                className="flex flex-col items-center mt-2 space-y-1 text-xs cursor-pointer hover:text-sky-300"
+                className="flex flex-col items-center mt-2 space-y-1 text-xs border cursor-pointer text-slate-500 hover:text-sky-300 "
                 to="ContactMe"
               >
                 <svg
@@ -131,12 +131,12 @@ export default function Resume() {
                   />
                 </svg>
 
-                <span>Contact Me</span>
+                <span className="">Contact Me</span>
               </ScrollLink>
 
               <ScrollLink
                 offset={-30}
-                className="flex flex-col items-center mt-2 space-y-1 text-xs cursor-pointer hover:text-sky-300"
+                className="flex flex-col items-center mt-2 space-y-1 text-xs border cursor-pointer text-slate-500 hover:text-sky-300 "
                 to="Stacks"
               >
                 <svg
@@ -154,11 +154,11 @@ export default function Resume() {
                   />
                 </svg>
 
-                <span>Stacks</span>
+                <span className="">Stacks</span>
               </ScrollLink>
               <ScrollLink
                 offset={-30}
-                className="flex flex-col items-center mt-2 space-y-1 text-xs cursor-pointer hover:text-sky-300"
+                className="flex flex-col items-center mt-2 space-y-1 text-xs border cursor-pointer text-slate-500 hover:text-sky-300 "
                 to="PersonalProject"
               >
                 <svg
@@ -176,11 +176,11 @@ export default function Resume() {
                   />
                 </svg>
 
-                <span>Project</span>
+                <span className="">Project</span>
               </ScrollLink>
               <ScrollLink
                 offset={-30}
-                className="flex flex-col items-center mt-2 space-y-1 text-xs cursor-pointer hover:text-sky-300"
+                className="flex flex-col items-center mt-2 space-y-1 text-xs border cursor-pointer text-slate-500 hover:text-sky-300 "
                 to="Expernice"
               >
                 <svg
@@ -198,11 +198,11 @@ export default function Resume() {
                   />
                 </svg>
 
-                <span>Expernice</span>
+                <span className="">Expernice</span>
               </ScrollLink>
               <ScrollLink
                 offset={-30}
-                className="flex flex-col items-center mt-2 space-y-1 text-xs cursor-pointer hover:text-sky-300"
+                className="flex flex-col items-center mt-2 space-y-1 text-xs border cursor-pointer text-slate-500 hover:text-sky-300 "
                 to="Education"
               >
                 <svg
@@ -220,7 +220,7 @@ export default function Resume() {
                   />
                 </svg>
 
-                <span> Education</span>
+                <span className=""> Education</span>
               </ScrollLink>
             </div>
           </section>
