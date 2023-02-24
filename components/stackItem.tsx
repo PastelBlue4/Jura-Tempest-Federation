@@ -18,7 +18,7 @@ export default function StackItem({
       <div className="relative flex justify-center group">
         <div
           className={classNameHandler(
-            "flex flex-col items-center relative duration-700 ease-in-out  hover:scale-110 cursor-pointer group w-20 h-20"
+            "flex flex-col items-center relative duration-300 ease-in-out hover:scale-110 cursor-pointer group w-20 h-20"
           )}
         >
           <Image

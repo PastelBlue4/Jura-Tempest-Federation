@@ -19,7 +19,7 @@ export default function Resume() {
   const stackHandler = (currentTarget: HTMLDivElement, index: number): any => {
     if (!isStackOpen) {
       setIsStackOpen(true);
-      scroll.scrollTo(500 + index * 250, {
+      scroll.scrollTo(500 + index * 220, {
         smooth: true,
         duration: 500,
       });
@@ -51,8 +51,8 @@ export default function Resume() {
         <div className="w-full max-w-screen-lg antialiased last:mb-20 ">
           <div
             className={classNameHandler(
-              " z-50 w-full flex justify-center",
-              onCopy.toggle ? "opacity-100" : "opacity-0 visible "
+              " z-50  flex justify-center",
+              onCopy.toggle ? "opacity-100 w-full" : "opacity-0 visible w-0 "
             )}
           >
             <CopyAction item={onCopy.copyTagert} />
@@ -186,7 +186,7 @@ export default function Resume() {
               </p>
               <div
                 className={classNameHandler(
-                  "mt-6 relative transition-all duration-700 bg-gray-100 py-3 px-5 w-full ",
+                  "mt-6 relative transition-all duration-700 bg-gray-100 py-3 px-5 w-full rounded-xl ",
                   isCommentOpen ? "pb-[400px] " : ""
                 )}
               >
@@ -349,7 +349,7 @@ export default function Resume() {
           </section>
           <section
             id="Stacks"
-            className="relative flex flex-col items-center justify-center w-full mt-4 transition-all"
+            className="relative flex flex-col items-center justify-center w-full mt-10 transition-all"
           >
             <h1 className="w-11/12 pb-2 mb-4 text-3xl font-semibold border-b-2 ">
               <span className="p-1">Stacks</span>
@@ -362,70 +362,83 @@ export default function Resume() {
             >
               아이콘을 눌러 자세히 살펴보세요!
             </span>
-            <div
-              id="gridContainer"
-              className={classNameHandler(
-                "w-11/12 transition-all relative duration-500  ",
-                isStackOpen
-                  ? "grid grid-cols-1  gap-y-4 relative "
-                  : "grid grid-cols-4  md:grid-cols-8 gap-y-2"
-              )}
-            >
-              {data.map((item, index) => {
-                return (
-                  <div
-                    className={classNameHandler(
-                      "flex relative ",
-                      isStackOpen
-                        ? "justify-start items-center h-52 "
-                        : "justify-center"
-                    )}
-                    key={index}
-                  >
-                    <div
-                      className="relative "
-                      id={item.stackName}
-                      onClick={(e) => {
-                        stackHandler(e.currentTarget, index);
-                      }}
-                    >
-                      <StackItem logo={item.logo} stackName={item.stackName} />
-                    </div>
+            <div className="flex justify-center w-full">
+              <div
+                id="gridContainer"
+                className={classNameHandler(
+                  "relative  w-11/12 transition-all duration-150",
+                  isStackOpen
+                    ? "grid grid-cols-1  space-y-3 "
+                    : "grid grid-cols-4  md:grid-cols-8 gap-y-2"
+                )}
+              >
+                {data.map((item, index) => {
+                  return (
                     <div
                       className={classNameHandler(
-                        " bg-gray-100 ",
+                        "flex relative justify-center",
                         isStackOpen
-                          ? "ml-1 opacity-100 text-base w-full h-full transition duration-300 rounded-xl  lg:text-lg "
-                          : "visible opacity-0 w-0 h-0"
+                          ? "items-center border-b border-gray-300 py-6 box-content last:border-none "
+                          : ""
                       )}
+                      key={index}
                     >
-                      <ul className="flex flex-col m-2">
-                        {item.contents &&
-                          item.contents.map((contents, index) => {
-                            return (
-                              <li
-                                className="p-1 list-disc list-inside"
-                                key={index}
-                              >
-                                {contents}
-                              </li>
-                            );
-                          })}
-                      </ul>
+                      <div
+                        className="relative"
+                        id={item.stackName}
+                        onClick={(e) => {
+                          stackHandler(e.currentTarget, index);
+                        }}
+                      >
+                        <StackItem
+                          logo={item.logo}
+                          stackName={item.stackName}
+                        />
+                      </div>
+                      <div
+                        className={classNameHandler(
+                          " bg-gray-100  tracking-wide",
+                          isStackOpen
+                            ? "ml-px opacity-100 text-base w-11/12 h-full transition duration-300 rounded-xl "
+                            : "visible opacity-0 w-0 h-0"
+                        )}
+                      >
+                        <ul
+                          className={classNameHandler(
+                            "flex flex-col  ",
+                            isStackOpen ? " m-3 py-2 space-y-4  " : ""
+                          )}
+                        >
+                          {isStackOpen &&
+                            item.contents.map((contents, index) => {
+                              return (
+                                <li
+                                  className={classNameHandler(
+                                    "",
+                                    isStackOpen
+                                      ? "list-disc list-inside "
+                                      : "w-0 h-0 visible"
+                                  )}
+                                  key={index}
+                                >
+                                  {contents}
+                                </li>
+                              );
+                            })}
+                        </ul>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
 
-            <div className="relative w-11/12 transition-all">
-              <div className="w-full mt-4 overflow-hidden text-lg transition-all ease-in-out -z-10">
-                <div className="flex justify-center p-2 transition-all bg-gray-200 ">
-                  <span className="text-base">
-                    특정 언어, 직무에 한정하지 않고 다양한 경험을 해보려
-                    하고있어요.
-                  </span>
-                </div>
+            <div className="relative flex justify-center w-11/12 max-w-screen-md ">
+              <div className="flex justify-center w-full p-2 mt-5 text-lg bg-gray-200 rounded-lg -z-10 ">
+                <span className="text-base">
+                  특정 언어, 직무에 한정하지 않고 다양한 경험을 해보려
+                  하고있어요.
+                </span>
               </div>
             </div>
           </section>
