@@ -5,68 +5,16 @@ import Link from "next/link";
 import { classNameHandler } from "@libs/client/classNameHandler";
 import Image from "next/image";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import data from "soruce/data.json";
 
 import CopyAction from "@components/copyAction";
 
 export default function Resume() {
-  const data = [
-    {
-      stackName: "HTML",
-      logo: "/html.png",
-      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
-    },
-    {
-      stackName: "CSS",
-      logo: "/css.png",
-      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
-    },
-    {
-      stackName: "JavaScript",
-      logo: "/js.png",
-      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
-    },
-    {
-      stackName: "TypeScript",
-      logo: "/ts.png",
-      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
-    },
-    {
-      stackName: "React",
-      logo: "/react.png",
-      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
-    },
-    {
-      stackName: "Next.js",
-      logo: "/nextjs.png",
-      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
-    },
-    {
-      stackName: "SWR",
-      logo: "/swr.jpg",
-      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
-    },
-    {
-      stackName: "TailwindCSS",
-      logo: "/tailwind.png",
-      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
-    },
-    {
-      stackName: "Prisma",
-      logo: "/prisma.webp",
-      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
-    },
-    {
-      stackName: "PlanetScale",
-      logo: "/pscale.png",
-      contents: ["뭐무뭘을 할수 있습니다.", "있구만유"],
-    },
-  ];
-
   const [isCommentOpen, setIsCommentOpen] = useState(false);
   const [isStackOpen, setIsStackOpen] = useState(false);
   const [isProjectOpen, setIsProjectOpen] = useState(false);
   const [isExperniceOpen, setIsExperniceOpen] = useState(false);
-  const [onCopy, setOnCopy] = useState({ toggle: true, copyTagert: "phone" });
+  const [onCopy, setOnCopy] = useState({ toggle: false, copyTagert: "phone" });
 
   const stackHandler = (currentTarget: HTMLDivElement, index: number): any => {
     if (!isStackOpen) {
@@ -78,7 +26,7 @@ export default function Resume() {
     }
     if (isStackOpen) {
       setIsStackOpen(false);
-      scroll.scrollTo(700);
+      scroll.scrollTo(700, { duration: 700 });
     }
   };
 
@@ -309,7 +257,7 @@ export default function Resume() {
                 <span className="px-1">Contact Me</span>
               </h1>
 
-              <div className="flex justify-center pb-2 my-3 space-x-3 border-b-2 border-gray-300 w-">
+              <div className="flex justify-center pb-2 my-3 space-x-3 border-b border-gray-300">
                 <Link
                   target="_black"
                   href="https://github.com/PastelBlue4"
@@ -337,8 +285,8 @@ export default function Resume() {
                   </span>
                 </Link>
               </div>
-              <div className="space-y-6">
-                <span className="flex items-center justify-between px-2 py-1 text-lg bg-gray-100 ">
+              <div className="space-y-6 ">
+                <span className="flex items-center justify-between px-2 py-1 text-lg ">
                   <div className="flex gap-3">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -358,7 +306,7 @@ export default function Resume() {
                   </div>
 
                   <span
-                    className="ml-6 text-sm cursor-pointer"
+                    className="p-2 ml-6 text-sm bg-gray-200 rounded-md cursor-pointer hover:text-sky-600"
                     onClick={() => {
                       navigator.clipboard.writeText("010-8408-6414");
                       copyMessageHandler("phone");
@@ -368,7 +316,7 @@ export default function Resume() {
                   </span>
                 </span>
 
-                <span className="flex items-center justify-between px-2 py-1 text-lg bg-gray-100">
+                <span className="flex items-center justify-between px-2 py-1 text-lg ">
                   <div className="flex gap-3 ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -387,26 +335,13 @@ export default function Resume() {
                     <span>pastel0721@naver.com</span>
                   </div>
                   <span
-                    className="ml-6 cursor-pointer "
+                    className="p-2 ml-6 text-sm bg-gray-200 rounded-md cursor-pointer hover:text-sky-600"
                     onClick={() => {
                       navigator.clipboard.writeText("pastel0721@naver.com");
                       copyMessageHandler("mail");
                     }}
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"
-                      />
-                    </svg>
+                    메일 복사
                   </span>
                 </span>
               </div>
@@ -419,13 +354,20 @@ export default function Resume() {
             <h1 className="w-11/12 pb-2 mb-4 text-3xl font-semibold border-b-2 ">
               <span className="p-1">Stacks</span>
             </h1>
-
+            <span
+              className={classNameHandler(
+                "transition-all",
+                isStackOpen ? "opacity-0 visible h-0 " : " mb-2"
+              )}
+            >
+              아이콘을 눌러 자세히 살펴보세요!
+            </span>
             <div
               id="gridContainer"
               className={classNameHandler(
-                "w-11/12 transition-all relative duration-500 ",
+                "w-11/12 transition-all relative duration-500  ",
                 isStackOpen
-                  ? "grid grid-cols-1   gap-y-4 relative "
+                  ? "grid grid-cols-1  gap-y-4 relative "
                   : "grid grid-cols-4  md:grid-cols-8 gap-y-2"
               )}
             >
@@ -453,36 +395,36 @@ export default function Resume() {
                       className={classNameHandler(
                         " bg-gray-100 ",
                         isStackOpen
-                          ? "ml-1 opacity-100 text-base w-full h-full transition duration-300   lg:text-lg "
+                          ? "ml-1 opacity-100 text-base w-full h-full transition duration-300 rounded-xl  lg:text-lg "
                           : "visible opacity-0 w-0 h-0"
                       )}
                     >
-                      <div className="flex flex-col border-2 border-red-400 ">
+                      <ul className="flex flex-col m-2">
                         {item.contents &&
                           item.contents.map((contents, index) => {
-                            return <span key={index}>{contents}</span>;
+                            return (
+                              <li
+                                className="p-1 list-disc list-inside"
+                                key={index}
+                              >
+                                {contents}
+                              </li>
+                            );
                           })}
-                      </div>
+                      </ul>
                     </div>
                   </div>
                 );
               })}
             </div>
 
-            <div
-              className={classNameHandler(
-                "relative flex flex-col w-11/12 transition-all",
-                isStackOpen ? "pb-40" : ""
-              )}
-            >
-              <div
-                className={classNameHandler(
-                  "-z-10 transition-all ease-in-out overflow-hidden mt-4 absolute text-lg w-full",
-                  isStackOpen ? "" : "opacity-0 invisible"
-                )}
-              >
-                <div className="flex p-3 transition-all bg-gray-200 ">
-                  <div>그래도 짱짱 열심히 하고 있다능</div>
+            <div className="relative w-11/12 transition-all">
+              <div className="w-full mt-4 overflow-hidden text-lg transition-all ease-in-out -z-10">
+                <div className="flex justify-center p-2 transition-all bg-gray-200 ">
+                  <span className="text-base">
+                    특정 언어, 직무에 한정하지 않고 다양한 경험을 해보려
+                    하고있어요.
+                  </span>
                 </div>
               </div>
             </div>
