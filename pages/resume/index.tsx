@@ -66,7 +66,7 @@ export default function Resume() {
   const [isStackOpen, setIsStackOpen] = useState(false);
   const [isProjectOpen, setIsProjectOpen] = useState(false);
   const [isExperniceOpen, setIsExperniceOpen] = useState(false);
-  const [onCopy, setOnCopy] = useState({ toggle: false, copyTagert: "phone" });
+  const [onCopy, setOnCopy] = useState({ toggle: true, copyTagert: "phone" });
 
   const stackHandler = (currentTarget: HTMLDivElement, index: number): any => {
     if (!isStackOpen) {
@@ -100,7 +100,7 @@ export default function Resume() {
       </Head>
 
       <div className="relative z-50 flex flex-col items-center h-auto bg-gray-50 ">
-        <div className="w-full max-w-screen-lg ">
+        <div className="w-full max-w-screen-lg antialiased last:mb-20 ">
           <div
             className={classNameHandler(
               " z-50 w-full flex justify-center",
@@ -110,10 +110,10 @@ export default function Resume() {
             <CopyAction item={onCopy.copyTagert} />
           </div>
           <section className="fixed bottom-0 z-50 flex justify-center w-full max-w-screen-lg ">
-            <div className="flex w-full h-20 border-t border-gray-300 items-stat justify-evenly bg-sky-50">
+            <div className="box-content flex items-start justify-between w-full h-20 px-6 border-t border-gray-300 bg-sky-50">
               <ScrollLink
                 offset={-30}
-                className="flex flex-col items-center mt-2 space-y-1 text-xs border cursor-pointer text-slate-500 hover:text-sky-300 "
+                className="flex flex-col items-center mt-2 space-y-1 text-xs cursor-pointer text-slate-500 hover:text-sky-300 "
                 to="ContactMe"
               >
                 <svg
@@ -136,7 +136,7 @@ export default function Resume() {
 
               <ScrollLink
                 offset={-30}
-                className="flex flex-col items-center mt-2 space-y-1 text-xs border cursor-pointer text-slate-500 hover:text-sky-300 "
+                className="flex flex-col items-center mt-2 space-y-1 text-xs cursor-pointer text-slate-500 hover:text-sky-300 "
                 to="Stacks"
               >
                 <svg
@@ -158,7 +158,7 @@ export default function Resume() {
               </ScrollLink>
               <ScrollLink
                 offset={-30}
-                className="flex flex-col items-center mt-2 space-y-1 text-xs border cursor-pointer text-slate-500 hover:text-sky-300 "
+                className="flex flex-col items-center mt-2 space-y-1 text-xs cursor-pointer text-slate-500 hover:text-sky-300 "
                 to="PersonalProject"
               >
                 <svg
@@ -180,7 +180,7 @@ export default function Resume() {
               </ScrollLink>
               <ScrollLink
                 offset={-30}
-                className="flex flex-col items-center mt-2 space-y-1 text-xs border cursor-pointer text-slate-500 hover:text-sky-300 "
+                className="flex flex-col items-center mt-2 space-y-1 text-xs cursor-pointer w- text-slate-500 hover:text-sky-300 "
                 to="Expernice"
               >
                 <svg
@@ -202,7 +202,7 @@ export default function Resume() {
               </ScrollLink>
               <ScrollLink
                 offset={-30}
-                className="flex flex-col items-center mt-2 space-y-1 text-xs border cursor-pointer text-slate-500 hover:text-sky-300 "
+                className="flex flex-col items-center mt-2 space-y-1 text-xs cursor-pointer text-slate-500 hover:text-sky-300 "
                 to="Education"
               >
                 <svg
@@ -220,16 +220,16 @@ export default function Resume() {
                   />
                 </svg>
 
-                <span className=""> Education</span>
+                <span className="">Education</span>
               </ScrollLink>
             </div>
           </section>
           <section className="flex flex-col items-center justify-center w-full mt-10 transition-all lg:mt-20 ">
-            <h1 className="w-11/12 pb-2 text-3xl font-semibold border-b-2 text-sky-400 ">
+            <h1 className="w-11/12 p-1 pb-2 text-3xl font-semibold border-b-2">
               Hi, I&#39;m Romuru
             </h1>
 
-            <div className="relative flex flex-col items-center justify-center w-11/12 ">
+            <div className="relative flex flex-col items-center justify-center w-11/12 text-gray-600">
               <p className="flex flex-col mt-6 text-2xl font-semibold ">
                 <span className="">안녕하세요!</span>
                 <span className="mt-1 text-2xl ">
@@ -244,7 +244,7 @@ export default function Resume() {
               >
                 <button
                   className={classNameHandler(
-                    "absolute right-2 z-10 transition-all ",
+                    "absolute right-2 z-10 transition-all p-2 ",
                     isCommentOpen ? "rotate-180" : ""
                   )}
                   onClick={() => {
@@ -257,7 +257,7 @@ export default function Resume() {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-6 h-6"
+                    className="w-7 h-7"
                   >
                     <path
                       strokeLinecap="round"
@@ -269,19 +269,19 @@ export default function Resume() {
                 <div className="relative ">
                   <span className="text-lg">
                     <ul className="my-2 space-y-4 text-2xl tracking-wide list-disc list-inside ">
-                      <span className="font-semibold">저는 항상,</span>
-                      <li className="mt-5 text-lg leading-relaxed">
+                      <span className="font-medium">저는 항상,</span>
+                      <li className="mt-5 text-lg font-normal leading-relaxed">
                         지금 직면한 문제를 넘어,{" "}
-                        <span className=" bg-sky-100"> 본질적으로 </span>해결
-                        해야하는 문제가 무엇인지 고민해요.
+                        <span className="font-bold "> 본질적으로 </span>
+                        해결 해야하는 문제가 무엇인지 고민해요.
                       </li>
                       <li className="text-lg leading-relaxed">
                         사용자를 만족시킬 수 있는{" "}
-                        <span className=" bg-sky-100">UX/UI</span>를 고민해요.
+                        <span className="font-bold">UX/UI</span>를 고민해요.
                       </li>
                       <li className="text-lg leading-relaxed">
                         동료와 같은 목표를 나눌수 있게하는{" "}
-                        <span className=" bg-sky-100">소통</span>이 무엇인지
+                        <span className="font-bold ">소통</span>이 무엇인지
                         고민해요.
                       </li>
                     </ul>
@@ -306,10 +306,10 @@ export default function Resume() {
           <section id="ContactMe" className="mt-10">
             <div className="flex flex-col items-center ">
               <h1 className="w-11/12 pb-2 mb-4 text-3xl font-semibold border-b-2 ">
-                <span className=" text-sky-400">Contact Me</span>
+                <span className="px-1">Contact Me</span>
               </h1>
 
-              <div className="flex my-4 space-x-3">
+              <div className="flex justify-center pb-2 my-3 space-x-3 border-b-2 border-gray-300 w-">
                 <Link
                   target="_black"
                   href="https://github.com/PastelBlue4"
@@ -337,9 +337,9 @@ export default function Resume() {
                   </span>
                 </Link>
               </div>
-              <div className="space-y-6 ">
+              <div className="space-y-6">
                 <span className="flex items-center justify-between px-2 py-1 text-lg bg-gray-100 ">
-                  <div className="flex gap-3 ">
+                  <div className="flex gap-3">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -358,26 +358,13 @@ export default function Resume() {
                   </div>
 
                   <span
-                    className="ml-6 cursor-pointer "
+                    className="ml-6 text-sm cursor-pointer"
                     onClick={() => {
                       navigator.clipboard.writeText("010-8408-6414");
                       copyMessageHandler("phone");
                     }}
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"
-                      />
-                    </svg>
+                    번호 복사
                   </span>
                 </span>
 
@@ -430,7 +417,7 @@ export default function Resume() {
             className="relative flex flex-col items-center justify-center w-full mt-4 transition-all"
           >
             <h1 className="w-11/12 pb-2 mb-4 text-3xl font-semibold border-b-2 ">
-              <span className=" text-sky-400">Stacks</span>
+              <span className="p-1">Stacks</span>
             </h1>
 
             <div
@@ -505,7 +492,7 @@ export default function Resume() {
             className="flex flex-col items-center justify-center w-full mt-10 "
           >
             <h1 className="w-11/12 pb-2 mb-4 text-3xl font-semibold border-b-2 ">
-              <span className="text-sky-400 ">Personal Project</span>
+              <span className="p-1">Personal Project</span>
             </h1>
 
             <ul className="w-11/12 space-y-2">
@@ -537,7 +524,7 @@ export default function Resume() {
             className="flex flex-col items-center justify-center w-full mt-10 "
           >
             <h1 className="w-11/12 pb-2 mb-4 text-3xl font-semibold border-b-2">
-              <span className="text-sky-400">Expernice</span>
+              <span className="p-1">Expernice</span>
             </h1>
 
             <ul className="w-11/12 space-y-2">
@@ -568,9 +555,8 @@ export default function Resume() {
             className="flex flex-col items-center justify-center w-full mt-10 mb-10 "
           >
             <h1 className="w-11/12 pb-2 mb-4 text-3xl font-semibold border-b-2">
-              <span className="text-sky-400">Education</span>
+              <span className="p-1">Education</span>
             </h1>
-
             <ul className="w-11/12 space-y-2">
               <li>
                 <div className="flex justify-between ">
@@ -593,7 +579,6 @@ export default function Resume() {
                 </div>
               </li>
             </ul>
-            <div className="w-11/12 h-screen bg-blue-100"></div>
           </section>
         </div>
       </div>
