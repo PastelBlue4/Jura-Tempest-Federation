@@ -58,7 +58,7 @@ export default function Resume() {
             <CopyAction item={onCopy.copyTagert} />
           </div>
           <section className="fixed bottom-0 z-50 flex justify-center w-full max-w-screen-lg ">
-            <div className="box-content flex items-start justify-between w-full h-20 px-6 border-t border-gray-300 bg-sky-50">
+            <div className="box-content flex items-start justify-between w-full h-16 max-w-3xl px-8 border-t border-gray-300 bg-sky-50">
               <ScrollLink
                 offset={-30}
                 className="flex flex-col items-center mt-2 space-y-1 text-xs cursor-pointer text-slate-500 hover:text-sky-300 "
@@ -405,8 +405,8 @@ export default function Resume() {
                       >
                         <ul
                           className={classNameHandler(
-                            "flex flex-col  ",
-                            isStackOpen ? " m-3 py-2 space-y-4  " : ""
+                            "flex flex-col",
+                            isStackOpen ? " m-3 py-2 space-y-4 " : ""
                           )}
                         >
                           {isStackOpen &&
