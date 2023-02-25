@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <Header description="Romuru's Dev Blog" image="rimuru.jpg" title="home" />
+      <Header title="Home" description="Romuru's Dev Blog" image="rimuru.jpg" />
 
       <div className="flex justify-center">
         <div className="flex flex-col items-center px-12 pt-10 mt-10 border border-blue-300 ">
