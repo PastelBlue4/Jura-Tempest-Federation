@@ -222,9 +222,9 @@ export default function Resume() {
                 </button>
                 <div className="relative ">
                   <span className="text-lg">
-                    <ul className="my-4 space-y-2 text-xl list-disc list-inside ">
+                    <ul className="my-4 space-y-1 text-xl list-disc list-inside ">
                       <span className="font-medium">저는 항상,</span>
-                      <li className="mt-5 text-lg font-normal leading-relaxed">
+                      <li className="mt-5 text-lg font-normal ">
                         지금 직면한 문제를 넘어,{" "}
                         <span className="font-bold text-blue-400 ">
                           {" "}
@@ -254,7 +254,7 @@ export default function Resume() {
                     <span>
                       제가 알고있는 것들을 나누고, 교차검증을 하는 과정에 나도
                       몰랐던 부분도 알게 되어 나눔이 곧 성장이라는 생각을 가지고
-                      있습니다.
+                      있어요.
                     </span>
                   </div>
                 </div>
@@ -466,14 +466,14 @@ export default function Resume() {
                 <div className="flex flex-col space-y-2 ">
                   <span className="text-2xl font-bold">Karrot Market</span>
                   <span className="text-sm font-semibold text-gray-400">
-                    2022.12 ~
+                    2022.11 ~
                   </span>
                 </div>
                 <div className="flex flex-col space-y-3 text-gray-700">
                   <span>
                     사용자가 이미지와 여러 종류의 데이터를 담은 게시글을
                     업로드할 수 있고, 다른 사용자의 게시글을 읽고 대화하기,
-                    즐겨찾기 등 상호작용이 가능한 풀스택 프로젝트입니다.
+                    즐겨찾기 등 상호작용이 가능한 풀스택 프로젝트에요.
                   </span>
                   <span className="">
                     Next.js • TypeScript • TailwindCSS • SWR • Prisma •
@@ -493,13 +493,17 @@ export default function Resume() {
 
               <li className="pb-4 space-y-2 border-b">
                 <div className="flex flex-col space-y-2 ">
-                  <span className="text-2xl font-bold">Recoil Todo List</span>
+                  <span className="text-2xl font-bold">Recoil-To do List</span>
                   <span className="text-sm font-semibold text-gray-400">
-                    2022.11
+                    2022.9
                   </span>
                 </div>
                 <div className="flex flex-col space-y-3 text-gray-700">
-                  <span>전역상태 관리를 통해 </span>
+                  <span>
+                    상태관리 라이브러리를 통해 todo의 추가, 삭제, 카테고리
+                    변경과 다크모드의 상태를 참조하여 손쉽게 데이터를 변경할 수
+                    있는 방법을 구현한 프로젝트에요.{" "}
+                  </span>
                   <span className="">
                     React • TypeScript • Styled-components • Recoil
                   </span>
@@ -517,28 +521,29 @@ export default function Resume() {
 
               <li className="pb-4 space-y-2 border-b">
                 <div className="flex flex-col space-y-2 ">
-                  <span className="text-2xl font-bold">Karrot Market</span>
+                  <span className="text-2xl font-bold">Cointracker</span>
                   <span className="text-sm font-semibold text-gray-400">
-                    2022.12 ~
+                    2022.8 ~
                   </span>
                 </div>
                 <div className="flex flex-col space-y-3 text-gray-700">
                   <span>
-                    사용자가 사진 첨부가 가능한 게시글을 업로드할 수 있고, 다른
-                    이용자와의 소통을 도와주는 기능이 있습니다.{" "}
+                    코인정보 API를 React-query로 fetch하고, 맵핑을 통해
+                    컴포넌트를 렌더링하여 보여줘요. 리액트의 데이터 바인딩과,
+                    API요청, 유용한 React 라이브러리를 사용해본 프로젝트에요.
                   </span>
                   <span className="">
-                    Next.js • TypeScript • TailwindCSS • SWR • Prisma •
-                    PlanetScale
+                    React • TypeScript • Styled-components • React-query •
+                    React-rotuer
                   </span>
                 </div>
                 <div className="py-2">
                   <Link
                     className="font-semibold text-blue-500"
-                    href="https://github.com/PastelBlue4/karrot-market-clone"
+                    href="https://github.com/PastelBlue4/cointracker"
                     target="_black"
                   >
-                    자세한 설명과 코드 보러가기
+                    코드 보러가기
                   </Link>
                 </div>
               </li>
@@ -553,20 +558,62 @@ export default function Resume() {
             </h1>
 
             <ul className="w-11/12 space-y-2">
-              <li>
-                <div className="flex justify-between ">
-                  <span>노마드코더 IT 5분 잡학사전 베타테스터</span>
-                  <span>2022.11</span>
+              <li className="pb-4 space-y-2 border-b">
+                <div className="flex flex-col space-y-2 ">
+                  <span className="text-2xl font-bold">
+                    노마드코더 IT 5분 잡학사전 베타테스터{" "}
+                  </span>
+                  <span className="text-sm font-semibold text-gray-400">
+                    2022.8 ~
+                  </span>
+                </div>
+                <div className="flex flex-col space-y-3 text-gray-700">
+                  <span>
+                    노마드코더에서 출간한 IT 5분 잡학사전에 베타테스터로
+                    참여했어요. 오타 수정과 문맥, 기술적인 내용을 전반적으로
+                    검토하는 일을 했어요.
+                  </span>
+                  <span className=""></span>
+                </div>
+                <div className="py-2">
+                  <Link
+                    className="font-semibold text-blue-500"
+                    href="http://www.yes24.com/Product/Goods/113463430"
+                    target="_black"
+                  >
+                    책 정보 보러가기 (Yes24)
+                  </Link>
                 </div>
               </li>
 
-              <li>
-                <div className="flex justify-between ">
-                  <span>노마드코더 자바스크립트 & 타입스크립트 챌린지</span>
-                  <span>2022.8</span>
+              <li className="pb-4 space-y-2 border-b">
+                <div className="flex flex-col space-y-2 ">
+                  <span className="text-2xl font-bold">
+                    Javascript & TypeScript 챌린지
+                  </span>
+                  <span className="text-sm font-semibold text-gray-400">
+                    2022.8 ~
+                  </span>
+                </div>
+                <div className="flex flex-col space-y-3 text-gray-700">
+                  <span>
+                    노마드코더에서 주기적으로 열리는 JS와 TS 챌린지를 성실하게
+                    수료했어요. 챌린지는 매일 아침 6시에 퀴즈 또는 과제가
+                    주어져요. 마감 기간까지 제출 해야하고, 최종 과제가 심사를
+                    통과해야 챌린지를 수료할 수 있어요.
+                  </span>
+                  <span className=""></span>
+                </div>
+                <div className="py-2">
+                  <Link
+                    className="font-semibold text-blue-500"
+                    href="http://www.yes24.com/Product/Goods/113463430"
+                    target="_black"
+                  >
+                    책 정보 보러가기 (Yes24)
+                  </Link>
                 </div>
               </li>
-
               <li>
                 <div className="flex justify-between ">
                   <span>챌린지 챌린지 </span>
