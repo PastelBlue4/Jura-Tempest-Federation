@@ -8,6 +8,7 @@ import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import data from "soruce/data.json";
 
 import CopyAction from "@components/copyAction";
+import Header from "@components/header";
 
 export default function Resume() {
   const [isCommentOpen, setIsCommentOpen] = useState(false);
@@ -39,12 +40,11 @@ export default function Resume() {
 
   return (
     <>
-      <Head>
-        <title>Romuru Resume | Jura Tempest Federation</title>
-        <meta name="description" content="Romuru's Resume" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/icon.jpg" />
-      </Head>
+      <Header
+        description="Romuru's resume"
+        title="Romuru's resume"
+        image="profile.jpeg"
+      />
 
       <div className="relative z-50 flex flex-col items-center h-auto bg-gray-50 ">
         <div className="w-full max-w-screen-lg antialiased last:mb-20 ">
@@ -609,9 +609,7 @@ export default function Resume() {
                     className="font-semibold text-blue-500"
                     href="http://www.yes24.com/Product/Goods/113463430"
                     target="_black"
-                  >
-                    책 정보 보러가기 (Yes24)
-                  </Link>
+                  ></Link>
                 </div>
               </li>
               <li>
