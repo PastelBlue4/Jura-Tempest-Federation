@@ -58,7 +58,7 @@ export default function Resume() {
             <CopyAction item={onCopy.copyTagert} />
           </div>
           <section className="fixed bottom-0 z-50 flex justify-center w-full max-w-screen-lg ">
-            <div className="box-content flex items-baseline justify-between w-full h-20 max-w-3xl px-8 font-bold border-t border-gray-300 bg-sky-50">
+            <div className="box-content flex items-baseline justify-between w-full h-20 max-w-3xl px-3 font-bold border-t border-gray-300 bg-sky-50">
               <ScrollLink
                 offset={-30}
                 className="flex flex-col items-center mt-2 space-y-1 text-[11px] cursor-pointer text-slate-500 hover:text-sky-300 "
