@@ -4,10 +4,14 @@ import React from "react";
 interface HeaderInterface {
   title: string;
   description: string;
-  image: string;
+  image?: string;
 }
 
-export default function Header({ title, description, image }: HeaderInterface) {
+export default function Header({
+  title,
+  description,
+  image = "rimuru.jpg",
+}: HeaderInterface) {
   return (
     <Head>
       <title>{title} | Jura Tempest Federation</title>
