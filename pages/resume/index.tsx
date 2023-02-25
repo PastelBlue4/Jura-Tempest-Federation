@@ -223,7 +223,7 @@ export default function Resume() {
                 <div className="relative ">
                   <span className="text-lg">
                     <ul className="my-4 space-y-1 text-xl list-disc list-inside ">
-                      <span className="font-medium">저는 항상,</span>
+                      <span className="my-2 font-medium">저는 항상,</span>
                       <li className="mt-5 text-lg font-normal ">
                         지금 직면한 문제를 넘어,{" "}
                         <span className="font-bold text-blue-400 ">
@@ -233,7 +233,7 @@ export default function Resume() {
                         해결 해야하는 문제가 무엇인지 고민해요.
                       </li>
                       <li className="text-lg leading-relaxed">
-                        사용자를 만족시킬 수 있는{" "}
+                        사용자에게 최고의 경험을 줄수 있는{" "}
                         <span className="font-bold text-blue-400">UX/UI</span>를
                         고민해요.
                       </li>
