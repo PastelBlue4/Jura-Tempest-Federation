@@ -16,7 +16,7 @@ export default function Resume() {
   const [isExperniceOpen, setIsExperniceOpen] = useState(false);
   const [onCopy, setOnCopy] = useState({ toggle: false, copyTagert: "phone" });
 
-  const stackHandler = (currentTarget: HTMLDivElement, index: number): any => {
+  const stackHandler = (index: number): any => {
     if (!isStackOpen) {
       setIsStackOpen(true);
       scroll.scrollTo(500 + index * 220, {
@@ -29,7 +29,6 @@ export default function Resume() {
       scroll.scrollTo(700, { duration: 700 });
     }
   };
-
   const copyMessageHandler = (item: "phone" | "mail") => {
     setOnCopy({ toggle: true, copyTagert: item });
 
@@ -64,7 +63,7 @@ export default function Resume() {
                 className="flex flex-col items-center mt-2 space-y-1 text-[11px] cursor-pointer text-slate-500 hover:text-sky-300 "
                 to="ContactMe"
               >
-                <div className="flex flex-col items-center space-y-2">
+                <div className="flex flex-col items-center space-y-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -89,7 +88,7 @@ export default function Resume() {
                 className="flex flex-col items-center mt-2  space-y-1 text-[11px] cursor-pointer text-slate-500 hover:text-sky-300 "
                 to="Stacks"
               >
-                <div className="flex flex-col items-center space-y-2">
+                <div className="flex flex-col items-center space-y-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -110,9 +109,9 @@ export default function Resume() {
               <ScrollLink
                 offset={-30}
                 className="flex flex-col items-center mt-2 space-y-1  text-[11px] cursor-pointer text-slate-500 hover:text-sky-300 "
-                to="PersonalProject"
+                to="Project"
               >
-                <div className="flex flex-col items-center space-y-2">
+                <div className="flex flex-col items-center space-y-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -135,7 +134,7 @@ export default function Resume() {
                 className="flex flex-col items-center mt-2 space-y-1  text-[11px] cursor-pointer  text-slate-500 hover:text-sky-300 "
                 to="Expernice"
               >
-                <div className="flex flex-col items-center space-y-2">
+                <div className="flex flex-col items-center space-y-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -155,10 +154,10 @@ export default function Resume() {
               </ScrollLink>
               <ScrollLink
                 offset={-30}
-                className="flex flex-col items-center mt-2  text-[11px] cursor-pointer text-slate-500 hover:text-sky-300 "
+                className="flex flex-col items-center mt-2 space-y-1  text-[11px] cursor-pointer  text-slate-500 hover:text-sky-300 "
                 to="Education"
               >
-                <div className="flex flex-col items-center space-y-2 ">
+                <div className="flex flex-col items-center space-y-1 ">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -180,11 +179,11 @@ export default function Resume() {
             </div>
           </section>
           <section className="flex flex-col items-center justify-center w-full mt-10 transition-all lg:mt-20 ">
-            <h1 className="w-11/12 p-1 pb-2 text-3xl font-semibold border-b-2">
+            <h1 className="w-11/12 p-1 pb-2 text-xl font-semibold border-b-2">
               Hi, I&#39;m Romuru
             </h1>
 
-            <div className="relative flex flex-col items-center justify-center w-11/12 text-gray-600">
+            <div className="relative flex flex-col justify-center w-11/12 text-gray-600">
               <p className="flex flex-col mt-6 text-2xl font-semibold ">
                 <span className="">안녕하세요!</span>
                 <span className="mt-1 text-2xl ">
@@ -223,28 +222,32 @@ export default function Resume() {
                 </button>
                 <div className="relative ">
                   <span className="text-lg">
-                    <ul className="my-2 space-y-4 text-2xl tracking-wide list-disc list-inside ">
+                    <ul className="my-4 space-y-2 text-xl list-disc list-inside ">
                       <span className="font-medium">저는 항상,</span>
                       <li className="mt-5 text-lg font-normal leading-relaxed">
                         지금 직면한 문제를 넘어,{" "}
-                        <span className="font-bold "> 본질적으로 </span>
+                        <span className="font-bold text-blue-400 ">
+                          {" "}
+                          본질적으로{" "}
+                        </span>
                         해결 해야하는 문제가 무엇인지 고민해요.
                       </li>
                       <li className="text-lg leading-relaxed">
                         사용자를 만족시킬 수 있는{" "}
-                        <span className="font-bold">UX/UI</span>를 고민해요.
+                        <span className="font-bold text-blue-400">UX/UI</span>를
+                        고민해요.
                       </li>
                       <li className="text-lg leading-relaxed">
                         동료와 같은 목표를 나눌수 있게하는{" "}
-                        <span className="font-bold ">소통</span>이 무엇인지
-                        고민해요.
+                        <span className="font-bold text-blue-400 ">소통</span>이
+                        무엇인지 고민해요.
                       </li>
                     </ul>
                   </span>
 
                   <div
                     className={classNameHandler(
-                      " transition-all ease-in-out  duration-500 mt-2 absolute text-lg leading-relaxed",
+                      " transition-all ease-in-out  duration-500 mt-2 absolute text-lg ",
                       isCommentOpen ? "" : "  opacity-0 invisible "
                     )}
                   >
@@ -260,7 +263,7 @@ export default function Resume() {
           </section>
           <section id="ContactMe" className="mt-10">
             <div className="flex flex-col items-center ">
-              <h1 className="w-11/12 pb-2 mb-4 text-3xl font-semibold border-b-2 ">
+              <h1 className="w-11/12 pb-2 mb-4 text-lg font-semibold border-b-2 ">
                 <span className="px-1">Contact Me</span>
               </h1>
 
@@ -358,7 +361,7 @@ export default function Resume() {
             id="Stacks"
             className="relative flex flex-col items-center justify-center w-full mt-10 transition-all"
           >
-            <h1 className="w-11/12 pb-2 mb-4 text-3xl font-semibold border-b-2 ">
+            <h1 className="w-11/12 pb-2 mb-4 font-semibold border-b-2 text-lgl ">
               <span className="p-1">Stacks</span>
             </h1>
             <span
@@ -394,7 +397,7 @@ export default function Resume() {
                         className="relative"
                         id={item.stackName}
                         onClick={(e) => {
-                          stackHandler(e.currentTarget, index);
+                          stackHandler(index);
                         }}
                       >
                         <StackItem
@@ -443,40 +446,100 @@ export default function Resume() {
             <div className="relative flex justify-center w-11/12 max-w-screen-md ">
               <div className="flex justify-center w-full p-2 mt-5 text-lg bg-gray-200 rounded-lg -z-10 ">
                 <span className="text-base">
-                  특정 언어, 직무에 한정하지 않고 다양한 경험을 해보려
-                  하고있어요.
+                  특정 언어, 직무에 한정하지 않고{" "}
+                  <span className="font-bold text-blue-400">다양한 경험</span>을
+                  해보려 하고있어요.
                 </span>
               </div>
             </div>
           </section>
           <section
-            id="PersonalProject"
+            id="Project"
             className="flex flex-col items-center justify-center w-full mt-10 "
           >
-            <h1 className="w-11/12 pb-2 mb-4 text-3xl font-semibold border-b-2 ">
-              <span className="p-1">Personal Project</span>
+            <h1 className="w-11/12 pb-2 mb-4 text-lg font-semibold ">
+              <span className="">Project</span>
             </h1>
 
-            <ul className="w-11/12 space-y-2">
-              <li>
-                <div className="flex justify-between ">
-                  <span className="text-xl">캐럿마켓</span>
-                  <span>2022.12 ~ </span>
+            <ul className="w-11/12 space-y-4">
+              <li className="pb-4 space-y-2 border-b">
+                <div className="flex flex-col space-y-2 ">
+                  <span className="text-2xl font-bold">Karrot Market</span>
+                  <span className="text-sm font-semibold text-gray-400">
+                    2022.12 ~
+                  </span>
                 </div>
-                <span>캐럿마켓 설명</span>
+                <div className="flex flex-col space-y-3 text-gray-700">
+                  <span>
+                    사용자가 이미지와 여러 종류의 데이터를 담은 게시글을
+                    업로드할 수 있고, 다른 사용자의 게시글을 읽고 대화하기,
+                    즐겨찾기 등 상호작용이 가능한 풀스택 프로젝트입니다.
+                  </span>
+                  <span className="">
+                    Next.js • TypeScript • TailwindCSS • SWR • Prisma •
+                    PlanetScale
+                  </span>
+                </div>
+                <div className="py-2">
+                  <Link
+                    className="font-semibold text-blue-500 "
+                    href="https://github.com/PastelBlue4/karrot-market-clone"
+                    target="_black"
+                  >
+                    자세한 설명과 코드 보러가기
+                  </Link>
+                </div>
               </li>
 
-              <li>
-                <div className="flex justify-between ">
-                  <span>Reocil Todo List</span>
-                  <span>2022.8 ~ 2022.8</span>
+              <li className="pb-4 space-y-2 border-b">
+                <div className="flex flex-col space-y-2 ">
+                  <span className="text-2xl font-bold">Recoil Todo List</span>
+                  <span className="text-sm font-semibold text-gray-400">
+                    2022.11
+                  </span>
+                </div>
+                <div className="flex flex-col space-y-3 text-gray-700">
+                  <span>전역상태 관리를 통해 </span>
+                  <span className="">
+                    React • TypeScript • Styled-components • Recoil
+                  </span>
+                </div>
+                <div className="py-2">
+                  <Link
+                    className="font-semibold text-blue-500"
+                    href="https://github.com/PastelBlue4/karrot-market-clone"
+                    target="_black"
+                  >
+                    자세한 설명과 코드 보러가기
+                  </Link>
                 </div>
               </li>
 
-              <li>
-                <div className="flex justify-between ">
-                  <span>계룡디지텍고등학교 정보통신과</span>
-                  <span>2017.03 ~ 2020.2</span>
+              <li className="pb-4 space-y-2 border-b">
+                <div className="flex flex-col space-y-2 ">
+                  <span className="text-2xl font-bold">Karrot Market</span>
+                  <span className="text-sm font-semibold text-gray-400">
+                    2022.12 ~
+                  </span>
+                </div>
+                <div className="flex flex-col space-y-3 text-gray-700">
+                  <span>
+                    사용자가 사진 첨부가 가능한 게시글을 업로드할 수 있고, 다른
+                    이용자와의 소통을 도와주는 기능이 있습니다.{" "}
+                  </span>
+                  <span className="">
+                    Next.js • TypeScript • TailwindCSS • SWR • Prisma •
+                    PlanetScale
+                  </span>
+                </div>
+                <div className="py-2">
+                  <Link
+                    className="font-semibold text-blue-500"
+                    href="https://github.com/PastelBlue4/karrot-market-clone"
+                    target="_black"
+                  >
+                    자세한 설명과 코드 보러가기
+                  </Link>
                 </div>
               </li>
             </ul>
@@ -485,7 +548,7 @@ export default function Resume() {
             id="Expernice"
             className="flex flex-col items-center justify-center w-full mt-10 "
           >
-            <h1 className="w-11/12 pb-2 mb-4 text-3xl font-semibold border-b-2">
+            <h1 className="w-11/12 pb-2 mb-4 text-lg font-semibold border-b-2">
               <span className="p-1">Expernice</span>
             </h1>
 
@@ -516,7 +579,7 @@ export default function Resume() {
             id="Education"
             className="flex flex-col items-center justify-center w-full mt-10 mb-10 "
           >
-            <h1 className="w-11/12 pb-2 mb-4 text-3xl font-semibold border-b-2">
+            <h1 className="w-11/12 pb-2 mb-4 text-lg font-semibold border-b-2">
               <span className="p-1">Education</span>
             </h1>
             <ul className="w-11/12 space-y-2">
