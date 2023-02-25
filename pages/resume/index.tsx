@@ -41,8 +41,8 @@ export default function Resume() {
   return (
     <>
       <Header
-        description="Romuru's resume"
-        title="이찬우의 이력서, 포트폴리오 페이지입니다."
+        title="Romuru's resume"
+        description="이찬우의 이력서, 포트폴리오 페이지입니다."
         image="profile.jpeg"
       />
 
