@@ -22,9 +22,10 @@ export default function Header({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="blog" />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={`https://www.romuru.dev/${image}`} />
       <meta property="og:image:alt" content={description} />
       <meta property="og:site_name" content={title} />
+      <meta property="og:locale" content="ko_KR" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
