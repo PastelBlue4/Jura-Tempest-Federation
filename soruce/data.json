@@ -31,7 +31,7 @@
     "logo": "/ts.png",
     "contents": [
       "정적 타이핑으로, 더욱 간결하고 일관성있게 코드를 작성할 수 있어요.",
-      "TypeScript는 아직 많은 경험이 없어, 다양하고 규모가 큰 환경에서 사용해보고 싶어요."
+      "TypeScript는 아직 많이 사용해본 경험이 없어, 다양하고 규모가 큰 환경에서 사용해보고 싶어요."
     ]
   },
   {
@@ -48,8 +48,8 @@
     "logo": "/nextjs.png",
     "contents": [
       "기존 CSR과 SSR의 단점을 보완한 Next.js의 Pre-rendering을 사용해 프로젝트를 진행중이에요. ",
-      "file-system 기반의 route를 구성할 수 있고, 적절한 데이터 Dynamic Routes로 ",
-      "browser가 서버에게 요청을 하고, 응답을 받아 웹사이트가 렌더링되는 과정을 설명할 수 있어요."
+      "file-system 기반의 route를 구성할 수 있고, 적절한 데이터 Dynamic Routes로 디테일 페이지를 구현할 수 있어요. ",
+      "API Routes를 사용해 Next.js에서 백엔드 로직을 작성한 경험이 있어요. "
     ]
   },
   {
@@ -82,8 +82,8 @@
     "stackName": "Prisma",
     "logo": "/prisma.webp",
     "contents": [
-      "구현하려는 UI에 적절한 HTML 태그를 배치해, DOM Element를 구현할 수 있어요.",
-      "head, meta 태그를 사용해, 링크 전달시 정보 미리보기(OG)와 검색엔진 최적화(SEO)를 구현할 수 있어요.",
+      "서비스에 필요한 데이터 모델을 설계하고, CRUD 로직을 처리할 수 있어요.",
+      "데이터 모델간의 relation을 고려하여, 백엔드 로직 작성시에 적절하게 호출하여   ",
       "browser가 서버에게 요청을 하고, 응답을 받아 웹사이트가 렌더링되는 과정을 설명할 수 있어요."
     ]
   },

@@ -223,8 +223,8 @@ export default function Resume() {
                 <div className="relative ">
                   <span className="text-lg">
                     <ul className="my-4 space-y-1 text-xl list-disc list-inside ">
-                      <span className="my-2 font-medium">저는 항상,</span>
-                      <li className="mt-5 text-lg font-normal ">
+                      <span className="my-2 font-semibold">저는 항상,</span>
+                      <li className="mt-5 text-base font-normal lg:text-lg">
                         지금 직면한 문제를 넘어,{" "}
                         <span className="font-bold text-blue-400 ">
                           {" "}
@@ -232,12 +232,12 @@ export default function Resume() {
                         </span>
                         해결 해야하는 문제가 무엇인지 고민해요.
                       </li>
-                      <li className="text-lg leading-relaxed">
+                      <li className="text-base leading-relaxed lg:text-lg">
                         사용자에게 최고의 경험을 줄수 있는{" "}
                         <span className="font-bold text-blue-400">UX/UI</span>를
                         고민해요.
                       </li>
-                      <li className="text-lg leading-relaxed">
+                      <li className="text-base leading-relaxed lg:text-lg">
                         동료와 같은 목표를 나눌수 있게하는{" "}
                         <span className="font-bold text-blue-400 ">소통</span>이
                         무엇인지 고민해요.
@@ -458,7 +458,7 @@ export default function Resume() {
             className="flex flex-col items-center justify-center w-full mt-10 "
           >
             <h1 className="w-11/12 pb-2 mb-4 text-lg font-semibold ">
-              <span className="">Project</span>
+              <span className="p-1">Project</span>
             </h1>
 
             <ul className="w-11/12 space-y-4">
@@ -492,8 +492,8 @@ export default function Resume() {
               </li>
 
               <li className="pb-4 space-y-2 border-b">
-                <div className="flex flex-col space-y-2 ">
-                  <span className="text-2xl font-bold">Recoil-To do List</span>
+                <div className="flex flex-col space-y-2">
+                  <span className="text-2xl font-bold">ToDoList_Recoil</span>
                   <span className="text-sm font-semibold text-gray-400">
                     2022.9
                   </span>
@@ -511,7 +511,7 @@ export default function Resume() {
                 <div className="py-2">
                   <Link
                     className="font-semibold text-blue-500"
-                    href="https://github.com/PastelBlue4/karrot-market-clone"
+                    href="https://github.com/PastelBlue4/ToDoList_Recoil"
                     target="_black"
                   >
                     자세한 설명과 코드 보러가기
@@ -543,7 +543,7 @@ export default function Resume() {
                     href="https://github.com/PastelBlue4/cointracker"
                     target="_black"
                   >
-                    코드 보러가기
+                    자세한 설명과 코드 보러가기
                   </Link>
                 </div>
               </li>
@@ -553,18 +553,47 @@ export default function Resume() {
             id="Expernice"
             className="flex flex-col items-center justify-center w-full mt-10 "
           >
-            <h1 className="w-11/12 pb-2 mb-4 text-lg font-semibold border-b-2">
+            <h1 className="w-11/12 pb-2 mb-4 text-lg font-semibold ">
               <span className="p-1">Expernice</span>
             </h1>
 
-            <ul className="w-11/12 space-y-2">
+            <ul className="w-11/12 space-y-4">
               <li className="pb-4 space-y-2 border-b">
                 <div className="flex flex-col space-y-2 ">
                   <span className="text-2xl font-bold">
-                    노마드코더 IT 5분 잡학사전 베타테스터{" "}
+                    지식공유 블로그 포스팅
                   </span>
                   <span className="text-sm font-semibold text-gray-400">
-                    2022.8 ~
+                    2022.2 ~
+                  </span>
+                </div>
+                <div className="flex flex-col space-y-3 text-gray-700">
+                  <span>
+                    새로운 기술을 배우고, 문제를 해결한 경험을 문서화하는 연습을
+                    하고있어요. 아직 어색하고 좋은 내용을 담기에는 어렵지만,
+                    꾸준히 포스팅을 하려고 해요. 지금 방문하고 있는 웹사이트가
+                    새로운 개인 블로그에요!
+                  </span>
+                  <span className=""></span>
+                </div>
+                <div className="py-2">
+                  <Link
+                    className="font-semibold text-blue-500"
+                    href="https://velog.io/@pastelblue0721"
+                    target="_black"
+                  >
+                    블로그 보러가기
+                  </Link>
+                </div>
+              </li>
+
+              <li className="pb-4 space-y-2 border-b">
+                <div className="flex flex-col space-y-2 ">
+                  <span className="text-2xl font-bold">
+                    노마드코더 IT 5분 잡학사전 베타테스터
+                  </span>
+                  <span className="text-sm font-semibold text-gray-400">
+                    2022.11
                   </span>
                 </div>
                 <div className="flex flex-col space-y-3 text-gray-700">
@@ -592,7 +621,7 @@ export default function Resume() {
                     Javascript & TypeScript 챌린지
                   </span>
                   <span className="text-sm font-semibold text-gray-400">
-                    2022.8 ~
+                    2022.4
                   </span>
                 </div>
                 <div className="flex flex-col space-y-3 text-gray-700">
@@ -604,19 +633,7 @@ export default function Resume() {
                   </span>
                   <span className=""></span>
                 </div>
-                <div className="py-2">
-                  <Link
-                    className="font-semibold text-blue-500"
-                    href="http://www.yes24.com/Product/Goods/113463430"
-                    target="_black"
-                  ></Link>
-                </div>
-              </li>
-              <li>
-                <div className="flex justify-between ">
-                  <span>챌린지 챌린지 </span>
-                  <span>2017.03 ~ 2020.2</span>
-                </div>
+                <div className="py-2"></div>
               </li>
             </ul>
           </section>
@@ -624,24 +641,10 @@ export default function Resume() {
             id="Education"
             className="flex flex-col items-center justify-center w-full mt-10 mb-10 "
           >
-            <h1 className="w-11/12 pb-2 mb-4 text-lg font-semibold border-b-2">
+            <h1 className="w-11/12 pb-2 mb-4 text-lg font-semibold ">
               <span className="p-1">Education</span>
             </h1>
             <ul className="w-11/12 space-y-2">
-              <li>
-                <div className="flex justify-between ">
-                  <span>노마드코더 IT 5분 잡학사전 베타테스터</span>
-                  <span>2022.11</span>
-                </div>
-              </li>
-
-              <li>
-                <div className="flex justify-between ">
-                  <span>노마드코더 자바스크립트 & 타입스크립트 챌린지</span>
-                  <span>2022.8</span>
-                </div>
-              </li>
-
               <li>
                 <div className="flex justify-between ">
                   <span>계룡디지텍고등학교 정보통신과</span>
