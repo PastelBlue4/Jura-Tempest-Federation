@@ -20,7 +20,7 @@ export default function Resume() {
   const stackHandler = (index: number): any => {
     if (!isStackOpen) {
       setIsStackOpen(true);
-      scroll.scrollTo(500 + index * 220, {
+      scroll.scrollTo(500 + index * 280, {
         smooth: true,
         duration: 500,
       });
@@ -179,7 +179,7 @@ export default function Resume() {
             </div>
           </section>
           <section className="flex flex-col items-center justify-center w-full mt-10 transition-all lg:mt-20 ">
-            <h1 className="w-11/12 p-1 pb-2 text-xl font-semibold border-b-2">
+            <h1 className="w-11/12 p-1 text-xl font-semibold border-b-2">
               Hi, I&#39;m Romuru
             </h1>
 
@@ -192,8 +192,8 @@ export default function Resume() {
               </p>
               <div
                 className={classNameHandler(
-                  "mt-6 relative transition-all duration-700 bg-gray-100 py-3 px-5 w-full rounded-xl ",
-                  isCommentOpen ? "pb-[400px] " : ""
+                  "mt-6 relative transition-all duration-300 bg-gray-100 py-3 px-5 w-full rounded-xl ",
+                  isCommentOpen ? "pb-[200px] " : ""
                 )}
               >
                 <button
@@ -224,21 +224,27 @@ export default function Resume() {
                   <span className="text-lg">
                     <ul className="my-4 space-y-1 text-xl list-disc list-inside ">
                       <span className="my-2 font-semibold">저는 항상,</span>
-                      <li className="mt-5 text-base font-normal lg:text-lg">
-                        지금 직면한 문제를 넘어,{" "}
+                      <li className="text-base leading-relaxed lg:text-lg">
                         <span className="font-bold text-blue-400 ">
-                          {" "}
-                          본질적으로{" "}
+                          지속가능한{" "}
+                        </span>
+                        소프트웨어가 무엇인지 고민해요.
+                      </li>
+                      <li className="mt-5 text-base font-normal lg:text-lg">
+                        지금 직면한 문제를 넘어,
+                        <span className="font-bold text-blue-400 ">
+                          본질적으로
                         </span>
                         해결 해야하는 문제가 무엇인지 고민해요.
                       </li>
+
                       <li className="text-base leading-relaxed lg:text-lg">
-                        사용자에게 최고의 경험을 줄수 있는{" "}
+                        사용자에게 최고의 경험을 줄수 있는
                         <span className="font-bold text-blue-400">UX/UI</span>를
                         고민해요.
                       </li>
                       <li className="text-base leading-relaxed lg:text-lg">
-                        동료와 같은 목표를 나눌수 있게하는{" "}
+                        동료와 같은 목표를 나눌수 있게하는
                         <span className="font-bold text-blue-400 ">소통</span>이
                         무엇인지 고민해요.
                       </li>
@@ -247,14 +253,19 @@ export default function Resume() {
 
                   <div
                     className={classNameHandler(
-                      " transition-all ease-in-out  duration-500 mt-2 absolute text-lg ",
-                      isCommentOpen ? "" : "  opacity-0 invisible "
+                      " transition-all ease-in-out mt-2 absolute text-lg ",
+                      isCommentOpen
+                        ? "  duration-700"
+                        : "  opacity-0 invisible duration-300 "
                     )}
                   >
-                    <span>
+                    <span className="text-base lg:text-lg">
                       제가 알고있는 것들을 나누고, 교차검증을 하는 과정에 나도
                       몰랐던 부분도 알게 되어 나눔이 곧 성장이라는 생각을 가지고
-                      있어요.
+                      있어요. 하지만 직접 경험하고 문제를 인지하는 권리를
+                      존중하지 못하지는 않을까라는 고민을 가끔해요. 그래도
+                      회사와, 동료들과 같이 성장하는 것은 매우 중요하고 재미있는
+                      과정이라고 생각해요.
                     </span>
                   </div>
                 </div>
@@ -264,10 +275,10 @@ export default function Resume() {
           <section id="ContactMe" className="mt-10">
             <div className="flex flex-col items-center ">
               <h1 className="w-11/12 pb-2 mb-4 text-lg font-semibold border-b-2 ">
-                <span className="px-1">Contact Me</span>
+                <span className="p-1">Contact Me</span>
               </h1>
 
-              <div className="flex justify-center pb-2 my-3 space-x-3 border-b border-gray-300">
+              <div className="flex justify-center pb-2 my-3 space-x-3 border-gray-300">
                 <Link
                   target="_black"
                   href="https://github.com/PastelBlue4"
@@ -361,7 +372,7 @@ export default function Resume() {
             id="Stacks"
             className="relative flex flex-col items-center justify-center w-full mt-10 transition-all"
           >
-            <h1 className="w-11/12 pb-2 mb-4 font-semibold border-b-2 text-lgl ">
+            <h1 className="w-11/12 pb-2 mb-4 text-lg font-semibold border-b-2 ">
               <span className="p-1">Stacks</span>
             </h1>
             <span
@@ -457,7 +468,7 @@ export default function Resume() {
             id="Project"
             className="flex flex-col items-center justify-center w-full mt-10 "
           >
-            <h1 className="w-11/12 pb-2 mb-4 text-lg font-semibold ">
+            <h1 className="w-11/12 pb-2 mb-4 text-lg font-semibold border-b-2 ">
               <span className="p-1">Project</span>
             </h1>
 
@@ -471,9 +482,9 @@ export default function Resume() {
                 </div>
                 <div className="flex flex-col space-y-3 text-gray-700">
                   <span>
-                    사용자가 이미지와 여러 종류의 데이터를 담은 게시글을
-                    업로드할 수 있고, 다른 사용자의 게시글을 읽고 대화하기,
-                    즐겨찾기 등 상호작용이 가능한 풀스택 프로젝트에요.
+                    이미지와 여러 종류의 데이터를 담은 게시글을 업로드할 수
+                    있고, 다른 사용자의 게시글을 읽고 대화하기, 즐겨찾기 등
+                    상호작용이 가능한 중고거래 플랫폼 풀스택 클론 프로젝트에요.
                   </span>
                   <span className="">
                     Next.js • TypeScript • TailwindCSS • SWR • Prisma •
@@ -553,7 +564,7 @@ export default function Resume() {
             id="Expernice"
             className="flex flex-col items-center justify-center w-full mt-10 "
           >
-            <h1 className="w-11/12 pb-2 mb-4 text-lg font-semibold ">
+            <h1 className="w-11/12 pb-2 mb-4 text-lg font-semibold border-b-2 ">
               <span className="p-1">Expernice</span>
             </h1>
 

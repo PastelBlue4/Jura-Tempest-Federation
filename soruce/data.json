@@ -49,7 +49,7 @@
     "contents": [
       "기존 CSR과 SSR의 단점을 보완한 Next.js의 Pre-rendering을 사용해 프로젝트를 진행중이에요. ",
       "file-system 기반의 route를 구성할 수 있고, 적절한 데이터 Dynamic Routes로 디테일 페이지를 구현할 수 있어요. ",
-      "API Routes를 사용해 Next.js에서 백엔드 로직을 작성한 경험이 있어요. "
+      "API Routes를 사용해 Next.js에서 백엔드 로직을 작성할 수 있어요."
     ]
   },
   {
@@ -64,18 +64,17 @@
     "stackName": "SWR",
     "logo": "/swr.jpg",
     "contents": [
-      "구현하려는 UI에 적절한 HTML 태그를 배치해, DOM Element를 구현할 수 있어요.",
-      "head, meta 태그를 사용해, 링크 전달시 정보 미리보기(OG)와 검색엔진 최적화(SEO)를 구현할 수 있어요.",
-      "browser가 서버에게 요청을 하고, 응답을 받아 웹사이트가 렌더링되는 과정을 설명할 수 있어요."
+      "재사용성이 뛰어나고, 한번 fetch 함수를 실행하면 다른 컴포넌트에서 간단하게 fetch 응답 결과를 사용할 수 있어 선호해요.",
+      "Karrot Market 프로젝트에서는 로그인한 유저의 데이터를 참조하는 컴포넌트에서 사용하고 있어요. "
     ]
   },
   {
     "stackName": "TailwindCSS",
     "logo": "/tailwind.png",
     "contents": [
-      "구현하려는 UI에 적절한 HTML 태그를 배치해, DOM Element를 구현할 수 있어요.",
-      "head, meta 태그를 사용해, 링크 전달시 정보 미리보기(OG)와 검색엔진 최적화(SEO)를 구현할 수 있어요.",
-      "browser가 서버에게 요청을 하고, 응답을 받아 웹사이트가 렌더링되는 과정을 설명할 수 있어요."
+      "Tailwind가 제공하는 breakpoint로 편리하게 반응형 웹을 구현할 수 있어요.",
+      "별도의 css파일이 작성하지 않아, 빠르게 MVP를 제작할 수 있어요.",
+      "추가적인 설정없이 사용한 스타일을 빌드시에 기본 css파일로 변환해 CSR,SSR 구분없이 사용할 수 있어 선호해요.  "
     ]
   },
   {
@@ -83,17 +82,7 @@
     "logo": "/prisma.webp",
     "contents": [
       "서비스에 필요한 데이터 모델을 설계하고, CRUD 로직을 처리할 수 있어요.",
-      "데이터 모델간의 relation을 고려하여, 백엔드 로직 작성시에 적절하게 호출하여   ",
-      "browser가 서버에게 요청을 하고, 응답을 받아 웹사이트가 렌더링되는 과정을 설명할 수 있어요."
-    ]
-  },
-  {
-    "stackName": "PlanetScale",
-    "logo": "/pscale.png",
-    "contents": [
-      "구현하려는 UI에 적절한 HTML 태그를 배치해, DOM Element를 구현할 수 있어요.",
-      "head, meta 태그를 사용해, 링크 전달시 정보 미리보기(OG)와 검색엔진 최적화(SEO)를 구현할 수 있어요.",
-      "browser가 서버에게 요청을 하고, 응답을 받아 웹사이트가 렌더링되는 과정을 설명할 수 있어요."
+      "데이터 모델간의 relation을 고려하여, 백엔드 로직 작성시에 적절하게 호출하여 서비스를 구현중이에요.   "
     ]
   }
 ]
