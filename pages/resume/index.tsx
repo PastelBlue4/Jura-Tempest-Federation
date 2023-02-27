@@ -556,13 +556,20 @@ export default function Resume() {
                     React-rotuer
                   </span>
                 </div>
-                <div className="py-2">
+                <div className="py-2 space-x-4">
                   <Link
                     className="font-semibold text-blue-500"
                     href="https://github.com/PastelBlue4/cointracker"
                     target="_black"
                   >
                     코드 보러가기
+                  </Link>
+                  <Link
+                    className="font-semibold text-blue-500"
+                    href="https://reactcointracker.vercel.app/"
+                    target="_black"
+                  >
+                    결과물 보러가기
                   </Link>
                 </div>
               </li>
