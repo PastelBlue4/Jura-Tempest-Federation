@@ -20,7 +20,7 @@ export default function Resume() {
   const stackHandler = (index: number): any => {
     if (!isStackOpen) {
       setIsStackOpen(true);
-      scroll.scrollTo(500 + index * 280, {
+      scroll.scrollTo(500 + index * 285, {
         smooth: true,
         duration: 500,
       });
@@ -477,18 +477,18 @@ export default function Resume() {
                 <div className="flex flex-col space-y-2 ">
                   <span className="text-2xl font-bold">Karrot Market</span>
                   <span className="text-sm font-semibold text-gray-400">
-                    2022.11 ~
+                    2022.11 ~ 진행중
                   </span>
                 </div>
                 <div className="flex flex-col space-y-3 text-gray-700">
                   <span>
-                    이미지와 여러 종류의 데이터를 담은 게시글을 업로드할 수
-                    있고, 다른 사용자의 게시글을 읽고 대화하기, 즐겨찾기 등
-                    상호작용이 가능한 중고거래 플랫폼 풀스택 클론 프로젝트에요.
+                    사용자가 이미지를 첨부한 게시글을 업로드할 수 있고, 대화,
+                    즐겨찾기, 이메일 인증 등 상호작용이 가능한 중고거래 플랫폼
+                    풀스택 클론 프로젝트에요.
                   </span>
                   <span className="">
                     Next.js • TypeScript • TailwindCSS • SWR • Prisma •
-                    PlanetScale
+                    PlanetScale • React-hook-form
                   </span>
                 </div>
                 <div className="py-2">
@@ -497,7 +497,7 @@ export default function Resume() {
                     href="https://github.com/PastelBlue4/karrot-market-clone"
                     target="_black"
                   >
-                    자세한 설명과 코드 보러가기
+                    코드 보러가기
                   </Link>
                 </div>
               </li>
@@ -516,16 +516,24 @@ export default function Resume() {
                     있는 방법을 구현한 프로젝트에요.{" "}
                   </span>
                   <span className="">
-                    React • TypeScript • Styled-components • Recoil
+                    React • TypeScript • Styled-components • Recoil •
+                    React-hook-form
                   </span>
                 </div>
-                <div className="py-2">
+                <div className="py-2 space-x-4">
                   <Link
                     className="font-semibold text-blue-500"
                     href="https://github.com/PastelBlue4/ToDoList_Recoil"
                     target="_black"
                   >
-                    자세한 설명과 코드 보러가기
+                    코드 보러가기
+                  </Link>
+                  <Link
+                    className="font-semibold text-blue-500"
+                    href="https://to-do-list-recoil.vercel.app/"
+                    target="_black"
+                  >
+                    결과물 보러가기
                   </Link>
                 </div>
               </li>
@@ -534,7 +542,7 @@ export default function Resume() {
                 <div className="flex flex-col space-y-2 ">
                   <span className="text-2xl font-bold">Cointracker</span>
                   <span className="text-sm font-semibold text-gray-400">
-                    2022.8 ~
+                    2022.8
                   </span>
                 </div>
                 <div className="flex flex-col space-y-3 text-gray-700">
@@ -554,7 +562,7 @@ export default function Resume() {
                     href="https://github.com/PastelBlue4/cointracker"
                     target="_black"
                   >
-                    자세한 설명과 코드 보러가기
+                    코드 보러가기
                   </Link>
                 </div>
               </li>
