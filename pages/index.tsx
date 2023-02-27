@@ -1,18 +1,22 @@
 import Header from "@components/header";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <>
       <Header title="Home" description="Romuru's Dev Blog" image="rimuru.jpg" />
 
-      <div className="flex justify-center">
-        <div className="flex flex-col items-center px-12 pt-10 mt-10 border border-blue-300 ">
-          <div className="text-3xl text-blue-300 rounded-lg ">
-            우리 가게 아직 살아있어요.....
-          </div>
-          <Image src="/rimuru.jpg" alt="Rimuru!" width={500} height={500} />
-        </div>
+      <div className="flex flex-col items-center justify-center mt-20 ">
+        <h1 className="text-2xl font-bold"> 블로그는 계속해서 제작중이에요!</h1>
+        <Link
+          href="https://github.com/PastelBlue4/Jura-Tempest-Federation"
+          className="my-10 underline hover:text-sky-300"
+        >
+          깃허브로 코드 보러가기
+        </Link>
+
+        <Image src="/mokoko.png" alt="profile" width={300} height={300} />
       </div>
     </>
   );
