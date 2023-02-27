@@ -20,10 +20,13 @@ export default function Resume() {
   const stackHandler = (index: number): any => {
     if (!isStackOpen) {
       setIsStackOpen(true);
-      scroll.scrollTo(500 + index * 285, {
-        smooth: true,
-        duration: 500,
-      });
+      scroll.scrollTo(
+        500 + (window.innerWidth > 560 ? index * 200 : index * 280),
+        {
+          smooth: true,
+          duration: 500,
+        }
+      );
     }
     if (isStackOpen) {
       setIsStackOpen(false);
