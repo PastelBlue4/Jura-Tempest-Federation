@@ -556,7 +556,7 @@ export default function Resume() {
                     React-rotuer
                   </span>
                 </div>
-                <div className="py-2 space-x-4">
+                <div className="py-2 space-x-4 ">
                   <Link
                     className="font-semibold text-blue-500"
                     href="https://github.com/PastelBlue4/cointracker"
