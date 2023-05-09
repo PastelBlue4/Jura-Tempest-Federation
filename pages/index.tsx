@@ -1,8 +1,10 @@
 import Header from "@components/header";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+  const [toogle, setToggle] = useState(true);
   return (
     <>
       <Header title="Home" description="Romuru's Dev Blog" image="rimuru.jpg" />
