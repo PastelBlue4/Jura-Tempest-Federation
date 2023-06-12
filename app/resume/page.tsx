@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import StackItem from "@components/stackItem";
 import Head from "next/head";
@@ -10,7 +12,7 @@ import data from "soruce/data.json";
 import CopyAction from "@components/copyAction";
 import Header from "@components/header";
 
-export default function Resume() {
+export default function Page() {
   const [isCommentOpen, setIsCommentOpen] = useState(false);
   const [isStackOpen, setIsStackOpen] = useState(false);
   const [isProjectOpen, setIsProjectOpen] = useState(false);
@@ -60,7 +62,7 @@ export default function Resume() {
             <CopyAction item={onCopy.copyTagert} />
           </div>
           <section className="fixed bottom-0 z-50 flex justify-center w-full max-w-screen-lg ">
-            <div className="box-content flex items-baseline justify-between w-full h-20 max-w-3xl px-3 font-bold border-t border-gray-300 bg-sky-50">
+            {/* <div className="box-content flex items-baseline justify-between w-full h-20 max-w-3xl px-3 font-bold border-t border-gray-300 bg-sky-50">
               <ScrollLink
                 offset={-30}
                 className="flex flex-col items-center mt-2 space-y-1 text-[11px] cursor-pointer text-slate-500 hover:text-sky-300 "
@@ -179,7 +181,7 @@ export default function Resume() {
                   <span className="">Education</span>
                 </div>
               </ScrollLink>
-            </div>
+            </div> */}
           </section>
           <section className="flex flex-col items-center justify-center w-full mt-10 transition-all lg:mt-20 ">
             <h1 className="w-11/12 p-1 text-xl font-semibold border-b-2">
@@ -478,35 +480,83 @@ export default function Resume() {
             <ul className="w-11/12 space-y-4">
               <li className="pb-4 space-y-2 border-b">
                 <div className="flex flex-col space-y-2 ">
-                  <span className="text-2xl font-bold">Karrot Market</span>
+                  <span className="text-2xl font-bold">
+                    Cookierun Ovenbreak Package Calculator
+                  </span>
                   <span className="text-sm font-semibold text-gray-400">
-                    2022.11 ~ 진행중
+                    2023.5
                   </span>
                 </div>
                 <div className="flex flex-col space-y-3 text-gray-700">
-                  <span>
-                    사용자가 이미지를 첨부한 게시글을 업로드할 수 있고, 대화,
-                    즐겨찾기, 이메일 인증 등 상호작용이 가능한 중고거래 플랫폼
-                    풀스택 클론 프로젝트에요.
+                  <span className="leading-7">
+                    쿠키런 오븐브레이크 패키지의 효율을 계산해주는 프로젝트에요.
+                    최근 대규모 업데이트로 인해 새롭게 개발이 필요한
+                    상황이였어요. 초기에는 혼자 사용하려고 만든 프로젝트지만
+                    막상 배포를 해보니,
+                  </span>{" "}
+                  <span className="font-bold">
+                    {" "}
+                    한 달만에 누적 이용자 7000+ 을 달성했어요.
                   </span>
                   <span className="">
-                    Next.js • TypeScript • TailwindCSS • SWR • Prisma •
-                    PlanetScale • React-hook-form
+                    Next.js • TypeScript • TailwindCSS • Recoil
                   </span>
                 </div>
-                <div className="py-2">
+                <div className="py-2 space-x-4">
                   <Link
                     className="font-semibold text-blue-500 "
-                    href="https://github.com/PastelBlue4/karrot-market-clone"
+                    href="https://github.com/PastelBlue4/cookierun-ovenbreak-package-calculator"
                     target="_black"
                   >
                     코드 보러가기
+                  </Link>
+                  <Link
+                    className="font-semibold text-blue-500 "
+                    href="https://co-oven-package-calculator.vercel.app/"
+                    target="_black"
+                  >
+                    서비스 보러가기
                   </Link>
                 </div>
               </li>
 
               <li className="pb-4 space-y-2 border-b">
                 <div className="flex flex-col space-y-2">
+                  <span className="text-2xl font-bold">
+                    It &#39;s Official Website
+                  </span>
+                  <span className="text-sm font-semibold text-gray-400">
+                    2023.4
+                  </span>
+                </div>
+                <div className="flex flex-col space-y-3 text-gray-700">
+                  <span className="leading-6">
+                    가수 It&#39;의 공식 홈페이지와 실제 주문이 가능한 쇼핑몰을
+                    제작했어요. 기획, 개발, 디자인, 배포 모두 처음부터 끝까지
+                    참여했어요.
+                  </span>
+                  <span className="font-bold">
+                    5000+ 명의 누적 방문자와, 60건 이상의 상품 주문이
+                    이루어졌어요.
+                  </span>
+                  <span className="">
+                    Next.js • TypeScript • TailwindCSS • Recoil •
+                    React-hook-form
+                  </span>
+                </div>
+                <div className="py-2 space-x-4">
+                  <Link
+                    className="font-semibold text-blue-500"
+                    href="https://www.iiiiits.com/"
+                    target="_black"
+                  >
+                    결과물 보러가기
+                  </Link>
+                </div>
+              </li>
+
+              <li className="pb-4 space-y-2 border-b">
+                <div className="flex flex-col space-y-2 ">
                   <span className="text-2xl font-bold">ToDoList_Recoil</span>
                   <span className="text-sm font-semibold text-gray-400">
                     2022.9
@@ -534,42 +584,6 @@ export default function Resume() {
                   <Link
                     className="font-semibold text-blue-500"
                     href="https://to-do-list-recoil.vercel.app/"
-                    target="_black"
-                  >
-                    결과물 보러가기
-                  </Link>
-                </div>
-              </li>
-
-              <li className="pb-4 space-y-2 border-b">
-                <div className="flex flex-col space-y-2 ">
-                  <span className="text-2xl font-bold">Cointracker</span>
-                  <span className="text-sm font-semibold text-gray-400">
-                    2022.8
-                  </span>
-                </div>
-                <div className="flex flex-col space-y-3 text-gray-700">
-                  <span>
-                    코인정보 API를 React-query로 fetch하고, 맵핑을 통해
-                    컴포넌트를 렌더링하여 보여줘요. 리액트의 데이터 바인딩과,
-                    API요청, 유용한 React 라이브러리를 사용해본 프로젝트에요.
-                  </span>
-                  <span className="">
-                    React • TypeScript • Styled-components • React-query •
-                    React-rotuer
-                  </span>
-                </div>
-                <div className="py-2 space-x-4 ">
-                  <Link
-                    className="font-semibold text-blue-500"
-                    href="https://github.com/PastelBlue4/cointracker"
-                    target="_black"
-                  >
-                    코드 보러가기
-                  </Link>
-                  <Link
-                    className="font-semibold text-blue-500"
-                    href="https://reactcointracker.vercel.app/"
                     target="_black"
                   >
                     결과물 보러가기

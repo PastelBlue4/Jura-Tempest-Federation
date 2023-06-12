@@ -1,9 +1,11 @@
+"use client";
+
 import Header from "@components/header";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function Home() {
+export default function Page() {
   const [toogle, setToggle] = useState(true);
   return (
     <>

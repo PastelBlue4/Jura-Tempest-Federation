@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
 
-export default function index() {
+export default function Page() {
   const items = [1, 2, 3, 4, 4, 5, 6, 6];
   return (
     <>

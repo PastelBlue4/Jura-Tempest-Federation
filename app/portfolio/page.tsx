@@ -1,8 +1,10 @@
+"use client";
+
 import Header from "@components/header";
 import Head from "next/head";
 import React from "react";
 
-export default function portfolio() {
+export default function Page() {
   return (
     <>
       <Header description="portfolio" title="portfolio" />
