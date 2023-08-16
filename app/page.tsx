@@ -1,19 +1,22 @@
+/** @format */
+
 "use client";
 
-import Header from "@components/header";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+import { Metadata } from "next";
+
 export default function Page() {
   const [toogle, setToggle] = useState(true);
+
   return (
     <>
-      <Header title="Home" description="Romuru's Dev Blog" image="rimuru.jpg" />
-
       <div className="flex flex-col items-center justify-center mt-20 ">
         <h1 className="text-2xl font-bold"> 블로그는 계속해서 제작중이에요!</h1>
         <Link
+          target="blank"
           href="https://github.com/PastelBlue4/Jura-Tempest-Federation"
           className="my-10 underline hover:text-sky-300"
         >

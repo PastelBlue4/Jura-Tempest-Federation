@@ -1,16 +1,17 @@
+/** @format */
+
 "use client";
 
 import React, { useState } from "react";
 import StackItem from "@components/stackItem";
 import Head from "next/head";
 import Link from "next/link";
-import { classNameHandler } from "@libs/client/classNameHandler";
+import { classNameHandler } from "utils/client/classNameHandler";
 import Image from "next/image";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import data from "soruce/data.json";
 
 import CopyAction from "@components/copyAction";
-import Header from "@components/header";
 
 export default function Page() {
   const [isCommentOpen, setIsCommentOpen] = useState(false);
@@ -45,12 +46,6 @@ export default function Page() {
 
   return (
     <>
-      <Header
-        title="Romuru's resume"
-        description="이찬우의 이력서, 포트폴리오 페이지입니다."
-        image="profile.jpeg"
-      />
-
       <div className="relative z-50 flex flex-col items-center h-auto bg-gray-50 ">
         <div className="w-full max-w-screen-lg antialiased last:mb-20 ">
           <div
