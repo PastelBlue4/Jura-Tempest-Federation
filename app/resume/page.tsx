@@ -3,7 +3,7 @@
 "use client";
 
 import React, { useState } from "react";
-import StackItem from "@components/stackItem";
+import StackItem from "@components/Resume/stackItem";
 import Head from "next/head";
 import Link from "next/link";
 import { classNameHandler } from "utils/client/classNameHandler";
@@ -11,7 +11,7 @@ import Image from "next/image";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import data from "soruce/data.json";
 
-import CopyAction from "@components/copyAction";
+import CopyAction from "@components/Popup/copyAction";
 
 export default function Page() {
   const [isCommentOpen, setIsCommentOpen] = useState(false);

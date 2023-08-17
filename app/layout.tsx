@@ -18,8 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <Navbar />
-      <body className="mt-32">{children}</body>
+      <body className="">
+        <Navbar />
+        <div className="flex flex-col min-h-screen mt-24 bg-gray-50">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
