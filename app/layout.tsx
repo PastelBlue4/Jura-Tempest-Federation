@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className="">
         <Navbar />
-        <div className="flex flex-col min-h-screen mt-24 bg-gray-50">
+        <div className="flex flex-col min-h-[80vh] mt-24 bg-gray-50">
           {children}
         </div>
       </body>
