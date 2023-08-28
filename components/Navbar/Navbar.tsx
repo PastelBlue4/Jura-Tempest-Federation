@@ -3,7 +3,6 @@
 "use client";
 
 import { classNameHandler } from "utils/client/classNameHandler";
-import { getURL } from "next/dist/shared/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -16,6 +15,7 @@ type NavbarItemsTpye = {
 
 const NavbarItmes: NavbarItemsTpye[] = [
   { name: "Home", href: "/" },
+  { name: "Romuru", href: "/romuru-tempest" },
   { name: "Tech", href: "/tech" },
   { name: "Review", href: "/review" },
 ];
@@ -42,14 +42,14 @@ export default function Navbar() {
     <>
       <nav className="fixed top-0 flex items-center justify-center w-full h-24 bg-blue-300 ">
         <div className="flex justify-center w-3/4 md:justify-between">
-          <div className="relative flex w-16 h-16 ">
+          <Link href="/" className="relative flex w-16 h-16 ">
             <Image
               src="/icon.jpg"
               alt="Rimuru Main logo :)"
               fill
               className="rounded-xl "
             />
-          </div>
+          </Link>
 
           <ul className="items-center hidden gap-x-4 md:flex">
             {NavbarItmes &&

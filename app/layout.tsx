@@ -18,10 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className="">
+      <body>
         <Navbar />
-        <div className="flex flex-col min-h-[80vh] mt-24 bg-gray-50">
-          {children}
+        <div className="flex flex-col items-center justify-center min-h-screen py-24 bg-gray-50">
+          <div className="flex items-center justify-center w-5/6 ">
+            {children}
+          </div>
         </div>
       </body>
     </html>

@@ -52,14 +52,22 @@ const blogItems = [
 export default function Page() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center w-full mt-10 ">
-        <section className="w-full space-y-7">
+      <section className="flex flex-col items-center justify-center w-full mt-10 md:mt-16 ">
+        <div className="flex justify-start w-full px-3 py-4 bg-blue-400 rounded-sm">
+          <span className="mr-2">Filter : </span>
+          <div className="mr-2 space-x-4">
+            <span>Tech</span>
+            <span>Review</span>
+            <span>Life</span>
+          </div>
+        </div>
+        <div className="grid w-full grid-cols-1 p-4 gap-y-4 lg:grid-cols-2 2xl:grid-cols-4 bg-sky-100">
           {blogItems &&
             blogItems.map((item) => {
               return <TechPostItem key={item.id} item={item} />;
             })}
-        </section>
-      </div>
+        </div>
+      </section>
     </>
   );
 }
