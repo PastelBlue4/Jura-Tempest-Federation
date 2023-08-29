@@ -1,14 +1,12 @@
+/** @format */
+
 "use client";
 
-import Header from "@components/header";
-import Head from "next/head";
 import React from "react";
 
 export default function Page() {
   return (
     <>
-      <Header description="portfolio" title="portfolio" />
-
       <div>resume</div>
     </>
   );

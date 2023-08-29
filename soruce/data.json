@@ -1,7 +1,7 @@
 [
   {
     "stackName": "HTML",
-    "logo": "/html.png",
+    "logo": "/resume/icons/html.png",
     "contents": [
       "구현하려는 UI에 적절한 HTML 태그를 배치해, DOM Element를 구현할 수 있어요.",
       "head, meta 태그를 사용해, 링크 전달시 정보 미리보기(OG)와 검색엔진 최적화(SEO)를 구현할 수 있어요.",
@@ -10,7 +10,7 @@
   },
   {
     "stackName": "CSS",
-    "logo": "/css.png",
+    "logo": "/resume/icons/css.png",
     "contents": [
       "display, position 속성을 사용해서 적절한 위치에 Element를 배치할 수 있어요.",
       "사용자의 디바이스 해상도에 맞춰, 최고의 경험을 제공하는 반응형 UI을 구현할 수 있어요.",
@@ -19,7 +19,7 @@
   },
   {
     "stackName": "JavaScript",
-    "logo": "/js.png",
+    "logo": "/resume/icons/js.png",
     "contents": [
       "JS의 ES6+, fetch(), map(), filter()등의 내장 함수와, 데이터 타입에 대한 이해도가 있어요.",
       "DOM API를 통해 HTML Element와 click, focus, scroll과 같은 browser event들을 제어할 수 있어요.",
@@ -28,7 +28,7 @@
   },
   {
     "stackName": "TypeScript",
-    "logo": "/ts.png",
+    "logo": "/resume/icons/ts.png",
     "contents": [
       "정적 타이핑으로, 더욱 간결하고 일관성있게 코드를 작성할 수 있어요.",
       "TypeScript는 아직 많이 사용해본 경험이 없어, 다양하고 규모가 큰 환경에서 사용해보고 싶어요."
@@ -36,7 +36,7 @@
   },
   {
     "stackName": "React",
-    "logo": "/react.png",
+    "logo": "/resume/icons/react.png",
     "contents": [
       "JSX로 사용자에게 수월한 상호작용과, UX를 고려해 SPA를 개발한 경험이 있어요.",
       "useState, useEffect등 컴포넌트 생명주기 제어를 위한 React-hook을 사용할 수 있고, custom-hook을 작성해 필요한 코드를 추상화 해본 경험이 있어요.",
@@ -45,7 +45,7 @@
   },
   {
     "stackName": "Next.js",
-    "logo": "/nextjs.png",
+    "logo": "/resume/icons/nextjs.png",
     "contents": [
       "기존 CSR과 SSR의 단점을 보완한 Next.js의 Pre-rendering을 사용해 프로젝트를 진행중이에요. ",
       "file-system 기반의 route를 구성할 수 있고, 적절한 데이터 Dynamic Routes로 디테일 페이지를 구현할 수 있어요. ",
@@ -54,7 +54,7 @@
   },
   {
     "stackName": "Recoil",
-    "logo": "/recoil.jpg",
+    "logo": "/resume/icons/recoil.jpg",
     "contents": [
       "상태관리 라이브러리인 Recoil을 사용해, 모든 상태를 props로 전달한 기존 코드를 리팩토링한 경험이 있어요.",
       "읽기 전용, 수정 등 참조하는 컴포넌트들을 고려하여 전역 atom(상태)을 설계한 경험이 있어요."
@@ -62,7 +62,7 @@
   },
   {
     "stackName": "SWR",
-    "logo": "/swr.jpg",
+    "logo": "/resume/icons/swr.jpg",
     "contents": [
       "재사용성이 뛰어나고, 한번 fetch 함수를 실행하면 다른 컴포넌트에서 간단하게 fetch 응답 결과를 사용할 수 있어 선호해요.",
       "Karrot Market 프로젝트에서는 로그인한 유저의 데이터를 참조하는 컴포넌트에서 사용하고 있어요. "
@@ -70,7 +70,7 @@
   },
   {
     "stackName": "TailwindCSS",
-    "logo": "/tailwind.png",
+    "logo": "/resume/icons/tailwind.png",
     "contents": [
       "Tailwind가 제공하는 breakpoint로 편리하게 반응형 웹을 구현할 수 있어요.",
       "별도의 css파일이 작성하지 않아, 빠르게 MVP를 제작할 수 있어요.",
@@ -79,7 +79,7 @@
   },
   {
     "stackName": "Prisma",
-    "logo": "/prisma.webp",
+    "logo": "/resume/icons/prisma.webp",
     "contents": [
       "서비스에 필요한 데이터 모델을 설계하고, CRUD 로직을 처리할 수 있어요.",
       "데이터 모델간의 relation을 고려하여, 백엔드 로직 작성시에 적절하게 호출하여 서비스를 구현중이에요.   "
