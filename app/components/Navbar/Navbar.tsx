@@ -2,11 +2,11 @@
 
 "use client";
 
-import { classNameHandler } from "utils/client/classNameHandler";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
+import { classNameHandler } from "@libs/client/classNameHandler";
 
 type NavbarItemsTpye = {
   name: string;
@@ -40,14 +40,14 @@ const NavbarItemsComponents = ({ name, href }: NavbarItemsTpye) => {
 export default function Navbar() {
   return (
     <>
-      <nav className="fixed top-0 flex items-center justify-center w-full h-24 bg-blue-300 ">
+      <nav className="fixed top-0 flex items-center justify-center w-full h-16 bg-blue-300 ">
         <div className="flex justify-center w-3/4 md:justify-between">
-          <Link href="/" className="relative flex w-16 h-16 ">
+          <Link href="/" className="relative flex w-12 h-12 ">
             <Image
               src="/icon.jpg"
               alt="Rimuru Main logo :)"
               fill
-              className="rounded-xl "
+              className="rounded-md "
             />
           </Link>
 

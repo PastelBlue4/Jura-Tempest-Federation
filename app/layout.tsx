@@ -20,8 +20,8 @@ export default function RootLayout({
     <html lang="ko">
       <body>
         <Navbar />
-        <div className="flex flex-col items-center justify-center min-h-screen py-24 bg-gray-50">
-          <div className="flex items-center justify-center w-5/6 ">
+        <div className="flex flex-col items-center justify-center min-h-screen py-24 bg-blue-50">
+          <div className="flex items-center justify-center w-11/12 ">
             {children}
           </div>
         </div>

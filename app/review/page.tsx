@@ -53,7 +53,7 @@ export default function Page() {
   return (
     <>
       <section className="flex flex-col items-center justify-center w-full mt-10 md:mt-16 ">
-        <div className="flex justify-start w-full px-3 py-4 bg-blue-400 rounded-sm">
+        <div className="flex justify-start w-full px-3 py-4 bg-blue-400 rounded-sm ">
           <span className="mr-2">Filter : </span>
           <div className="mr-2 space-x-4">
             <span>book</span>

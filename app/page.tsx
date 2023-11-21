@@ -10,7 +10,7 @@ const mainPreviewItems = [
     type: "tech",
     title: "Lorem ipsum dolor sit amet consectetur",
     date: "2022-32-32",
-    contents: "lorem loremloremorem ",
+    contents: "lorem loremloremorem  quntityButton",
     thumbnail: "/",
   },
   {
@@ -51,11 +51,8 @@ export default function Page() {
   return (
     <>
       <div className="flex flex-col w-full ">
-        <section className="flex flex-col items-center justify-center w-full mt-10 md:mt-16 ">
-          <div className="flex justify-start w-full px-3 py-4 bg-blue-400 rounded-sm">
-            <div className="mr-2 space-x-4">최근 게시글</div>
-          </div>
-          <div className="grid w-full grid-cols-1 p-4 gap-y-4 lg:grid-cols-2 2xl:grid-cols-4 bg-sky-100">
+        <section className="flex flex-col items-center justify-center w-full ">
+          <div className="grid w-full grid-cols-1 p-4 gap-y-4 lg:grid-cols-2 2xl:grid-cols-4">
             {mainPreviewItems &&
               mainPreviewItems.map((item) => {
                 return <TechPostItem key={item.id} item={item} />;
