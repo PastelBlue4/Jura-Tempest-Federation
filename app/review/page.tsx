@@ -2,7 +2,7 @@
 
 "use client";
 
-import ReviewPostItem from "@components/Review/ReviewPostItem";
+import PostItem from "@components/Post/PostItem";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -52,22 +52,16 @@ const reviewItems = [
 export default function Page() {
   return (
     <>
-      <section className="flex flex-col items-center justify-center w-full mt-10 md:mt-16 ">
-        <div className="flex justify-start w-full px-3 py-4 bg-blue-400 rounded-sm ">
-          <span className="mr-2">Filter : </span>
-          <div className="mr-2 space-x-4">
-            <span>book</span>
-            <span>movie</span>
-            <span>product</span>
+      <div className="flex flex-col w-full ">
+        <section className="flex flex-col items-center w-full ">
+          <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5">
+            {reviewItems &&
+              reviewItems.map((item) => {
+                return <PostItem key={item.id} item={item} />;
+              })}
           </div>
-        </div>
-        <div className="grid w-full grid-cols-1 p-4 gap-y-4 lg:grid-cols-2 2xl:grid-cols-4 bg-sky-100">
-          {reviewItems &&
-            reviewItems.map((item) => {
-              return <ReviewPostItem key={item.id} item={item} />;
-            })}
-        </div>
-      </section>
+        </section>
+      </div>
     </>
   );
 }

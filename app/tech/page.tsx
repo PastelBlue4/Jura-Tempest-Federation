@@ -2,7 +2,7 @@
 
 "use client";
 
-import TechPostItem from "@components/Tech/TechPostItem";
+import PostItem from "@components/Post/PostItem";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -52,22 +52,16 @@ const blogItems = [
 export default function Page() {
   return (
     <>
-      <section className="flex flex-col items-center justify-center w-full mt-10 md:mt-16 ">
-        <div className="flex justify-start w-full px-3 py-4 bg-blue-400 rounded-sm">
-          <span className="mr-2">Filter : </span>
-          <div className="mr-2 space-x-4">
-            <span>Tech</span>
-            <span>Review</span>
-            <span>Life</span>
+      <div className="flex flex-col w-full ">
+        <section className="flex flex-col items-center w-full ">
+          <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5">
+            {blogItems &&
+              blogItems.map((item) => {
+                return <PostItem key={item.id} item={item} />;
+              })}
           </div>
-        </div>
-        <div className="grid w-full grid-cols-1 p-4 gap-y-4 lg:grid-cols-2 2xl:grid-cols-4 bg-sky-100">
-          {blogItems &&
-            blogItems.map((item) => {
-              return <TechPostItem key={item.id} item={item} />;
-            })}
-        </div>
-      </section>
+        </section>
+      </div>
     </>
   );
 }

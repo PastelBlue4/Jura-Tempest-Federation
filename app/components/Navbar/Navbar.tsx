@@ -26,7 +26,7 @@ const NavbarItemsComponents = ({ name, href }: NavbarItemsTpye) => {
       <Link href={href}>
         <span
           className={classNameHandler(
-            "text-lg transition-all duration-75 text-gray-900 hover:text-blue-400",
+            "text-sm  transition-all duration-75 text-gray-900 hover:text-blue-400",
             usePathname() == href ? "text-blue-300" : ""
           )}
         >
@@ -40,9 +40,9 @@ const NavbarItemsComponents = ({ name, href }: NavbarItemsTpye) => {
 export default function Navbar() {
   return (
     <>
-      <nav className="fixed top-0 flex items-center justify-center w-full h-16 bg-blue-300 ">
-        <div className="flex justify-center w-3/4 md:justify-between">
-          <Link href="/" className="relative flex w-12 h-12 ">
+      <nav className="fixed top-0 z-50 flex items-center justify-center w-full h-16 bg-blue-300 ">
+        <div className="flex justify-center w-11/12 p-5 md:justify-between max-w-screen-3xl">
+          <Link href="/" className="relative flex w-11 h-11 ">
             <Image
               src="/icon.jpg"
               alt="Rimuru Main logo :)"
