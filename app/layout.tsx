@@ -3,6 +3,7 @@
 import Navbar from "@components/Navbar/Navbar";
 import { Metadata } from "next";
 import "styles/globals.css";
+import RecoidContextProvider from "./atoms/recoilContextProvider";
 
 export const metadata: Metadata = {
   title: "Romuru's blog ",
@@ -22,7 +23,7 @@ export default function RootLayout({
         <Navbar />
         <div className="flex flex-col items-center min-h-screen py-24 bg-blue-50 ">
           <div className="flex justify-center w-11/12 max-w-screen-3xl">
-            {children}
+            <RecoidContextProvider>{children}</RecoidContextProvider>
           </div>
         </div>
       </body>
