@@ -3,7 +3,7 @@
 import Navbar from "@components/Navbar/Navbar";
 import { Metadata } from "next";
 import "styles/globals.css";
-import RecoidContextProvider from "./atoms/recoilContextProvider";
+import RecoidContextProvider from "./_atoms/recoilContextProvider";
 
 export const metadata: Metadata = {
   title: "Romuru's blog ",

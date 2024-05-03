@@ -1,6 +1,6 @@
-/** @format */
-
 "use client";
+
+/** @format */
 
 import Image from "next/image";
 import Link from "next/link";
@@ -26,7 +26,7 @@ const NavbarItemsComponents = ({ name, href }: NavbarItemsTpye) => {
       <Link href={href}>
         <span
           className={classNameHandler(
-            "text-sm  transition-all duration-75  hover:text-blue-500",
+            "text-base  transition-all duration-75  hover:text-blue-500",
             usePathname() == href ? "text-blue-500" : "text-gray-50"
           )}
         >
@@ -39,6 +39,7 @@ const NavbarItemsComponents = ({ name, href }: NavbarItemsTpye) => {
 
 export default function Navbar() {
   console.log(usePathname().split("/"));
+  console.log("dsadas");
 
   return (
     <>
