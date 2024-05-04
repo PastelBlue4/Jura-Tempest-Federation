@@ -38,9 +38,6 @@ const NavbarItemsComponents = ({ name, href }: NavbarItemsTpye) => {
 };
 
 export default function Navbar() {
-  console.log(usePathname().split("/"));
-  console.log("dsadas");
-
   return (
     <>
       <nav className="fixed top-0 z-50 flex items-center justify-center w-full h-16 bg-blue-300 ">
