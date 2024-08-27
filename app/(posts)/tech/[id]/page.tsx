@@ -1,11 +1,11 @@
 "use client";
 
-import Markdown from "../../../markdown/1234.mdx";
+import MDX_Viewer from "@components/MDX_Viewer/MDX_Viewer";
 
 export default async function Page({ params }: { params: { id: string } }) {
   return (
     <div>
-      <Markdown />
+      <MDX_Viewer />
     </div>
   );
 }
