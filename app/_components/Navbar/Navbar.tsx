@@ -28,7 +28,7 @@ export default function Navbar() {
         <Link href={href}>
           <span
             className={classNameHandler(
-              "text-base  transition-all duration-75  hover:text-blue-500",
+              "text-base font-medium  transition-all duration-75  hover:text-blue-500",
               usePathname() == href ? "text-blue-500" : "text-gray-700"
             )}
           >
@@ -60,12 +60,12 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed top-0 z-50 flex items-center justify-center w-full h-16 bg-blue-50">
-        <div className="flex items-center justify-between w-full px-5 max-w-screen-2xl ">
-          <Link href="/" className="relative flex text-xl ">
-            Romuru
+        <div className="flex items-center justify-between w-full max-w-screen-lg px-4 md:px-6 ">
+          <Link href="/" className="relative flex p-2 text-base text-gray-600 ">
+            Romuru.dev
           </Link>
 
-          <ul className="items-center justify-end hidden w-full gap-x-6 md:flex ">
+          <ul className="items-center justify-end hidden w-full gap-x-14 md:flex ">
             {NavbarItmes &&
               NavbarItmes.map((item) => {
                 return (
@@ -78,7 +78,7 @@ export default function Navbar() {
               })}
           </ul>
 
-          <div className="relative">
+          <div className="relative md:hidden">
             <button
               onClick={() => {
                 setIsMobileNavbarButtonOpen((prev) => !prev);
@@ -93,8 +93,8 @@ export default function Navbar() {
 
             <ul
               className={classNameHandler(
-                isMobileNavbarButtonOpen ? "visible" : "opacity-0 invisible",
-                "fixed left-0 w-screen h-screen transition-all duration-500 bg-blue-50  top-16 px-7 pt-8 space-y-10 border-t-2 "
+                isMobileNavbarButtonOpen ? "visible " : "opacity-0 invisible",
+                "fixed left-0 w-screen h-screen transition-all duration-500 bg-blue-50  top-16 px-7 pt-8 space-y-10 border-t-2 md:hidden "
               )}
             >
               {NavbarItmes &&
