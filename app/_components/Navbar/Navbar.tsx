@@ -1,7 +1,8 @@
 "use client";
-import Image from "next/image";
+
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import { usePathname } from "next/navigation";
 import { classNameHandler } from "@libs/client/classNameHandler";
 
@@ -17,35 +18,51 @@ const NavbarItmes: NavbarItemsTpye[] = [
   { name: "Review", href: "/review" },
 ];
 
-const NavbarItemsComponents = ({ name, href }: NavbarItemsTpye) => {
-  return (
-    <li>
-      <Link href={href}>
-        <span
-          className={classNameHandler(
-            "text-base  transition-all duration-75  hover:text-blue-500",
-            usePathname() == href ? "text-blue-500" : "text-gray-50"
-          )}
-        >
-          {name}
-        </span>
-      </Link>
-    </li>
-  );
-};
-
 export default function Navbar() {
+  const [isMobileNavbarButtonOpen, setIsMobileNavbarButtonOpen] =
+    useState(false);
+
+  const NavbarItemsComponents = ({ name, href }: NavbarItemsTpye) => {
+    return (
+      <li>
+        <Link href={href}>
+          <span
+            className={classNameHandler(
+              "text-base  transition-all duration-75  hover:text-blue-500",
+              usePathname() == href ? "text-blue-500" : "text-gray-700"
+            )}
+          >
+            {name}
+          </span>
+        </Link>
+      </li>
+    );
+  };
+
+  const MobileNavbarItemsComponents = ({ name, href }: NavbarItemsTpye) => {
+    return (
+      <li onClick={() => setIsMobileNavbarButtonOpen(false)}>
+        <Link href={href}>
+          <span
+            className={classNameHandler(
+              "text-3xl font-medium  transition-all duration-75  hover:text-blue-500",
+              usePathname() == href ? "text-blue-500" : "text-gray-700"
+            )}
+          >
+            {name}
+          </span>
+        </Link>
+      </li>
+    );
+  };
+
+  console.log(isMobileNavbarButtonOpen);
   return (
     <>
-      <nav className="fixed top-0 z-50 flex items-center justify-center w-full h-16 border-b border-gray-200  py-4  ">
-        <div className="flex justify-center w-5/6 md:justify-between max-w-screen-3xl">
-          <Link href="/" className="relative flex w-11 h-11 ">
-            <Image
-              src="/icon.jpg"
-              alt="Rimuru Main logo :)"
-              fill
-              className="rounded-md "
-            />
+      <nav className="fixed top-0 z-50 flex items-center justify-center w-full h-16 bg-blue-50">
+        <div className="flex items-center justify-between w-full px-5 max-w-screen-2xl ">
+          <Link href="/" className="relative flex text-xl ">
+            Romuru
           </Link>
 
           <ul className="items-center justify-end hidden w-full gap-x-6 md:flex ">
@@ -60,6 +77,38 @@ export default function Navbar() {
                 );
               })}
           </ul>
+
+          <div className="relative">
+            <button
+              onClick={() => {
+                setIsMobileNavbarButtonOpen((prev) => !prev);
+              }}
+            >
+              {isMobileNavbarButtonOpen ? (
+                <RxCross1 className="w-6 h-6" />
+              ) : (
+                <RxHamburgerMenu className="w-6 h-6" />
+              )}
+            </button>
+
+            <ul
+              className={classNameHandler(
+                isMobileNavbarButtonOpen ? "visible" : "opacity-0 invisible",
+                "fixed left-0 w-screen h-screen transition-all duration-500 bg-blue-50  top-16 px-7 pt-8 space-y-10 border-t-2 "
+              )}
+            >
+              {NavbarItmes &&
+                NavbarItmes.map((item) => {
+                  return (
+                    <MobileNavbarItemsComponents
+                      key={item.name}
+                      name={item.name}
+                      href={item.href}
+                    />
+                  );
+                })}
+            </ul>
+          </div>
         </div>
       </nav>
     </>
