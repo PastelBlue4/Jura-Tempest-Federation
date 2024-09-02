@@ -1,7 +1,4 @@
 "use client";
-
-/** @format */
-
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -40,8 +37,8 @@ const NavbarItemsComponents = ({ name, href }: NavbarItemsTpye) => {
 export default function Navbar() {
   return (
     <>
-      <nav className="fixed top-0 z-50 flex items-center justify-center w-full h-16 bg-blue-300 ">
-        <div className="flex justify-center w-11/12 md:justify-between max-w-screen-3xl">
+      <nav className="fixed top-0 z-50 flex items-center justify-center w-full h-16 border-b border-gray-200  py-4  ">
+        <div className="flex justify-center w-5/6 md:justify-between max-w-screen-3xl">
           <Link href="/" className="relative flex w-11 h-11 ">
             <Image
               src="/icon.jpg"
