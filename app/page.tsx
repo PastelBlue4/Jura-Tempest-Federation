@@ -1,5 +1,3 @@
-/** @format */
-
 "use client";
 
 import PostItem from "@components/Post/PostItem";
@@ -11,38 +9,43 @@ const mainPreviewItems = [
     title: "Lorem ipsum dolor sit amet consectetur",
     date: "2022-32-32",
     contents: "lorem loremloremorem  ",
+    readingLength: 22,
     thumbnail: "/rimuru.jpg",
   },
   {
     id: 2,
     type: "tech",
-    title: "adipisicing elit. Soluta natus",
+    title: "Lorem ipsum dolor sit amet consectetur",
     date: "2022-32-32",
-    contents: "lorem loremloremorem ",
+    contents: "lorem loremloremorem  ",
+    readingLength: 22,
     thumbnail: "/rimuru.jpg",
   },
   {
     id: 3,
     type: "tech",
-    title: " Soluta natus nisi quisquam ducimus",
+    title: "Lorem ipsum dolor sit amet consectetur",
     date: "2022-32-32",
-    contents: "lorem loremloremorem ",
+    contents: "lorem loremloremorem  ",
+    readingLength: 22,
     thumbnail: "/rimuru.jpg",
   },
   {
-    id: 1,
+    id: 4,
     type: "review",
     title: "illum, necessitatibus vitae culpa sequi ",
     date: "2022-32-32",
     contents: "lorem loremloremorem ",
+    readingLength: 22,
     thumbnail: "/rimuru.jpg",
   },
   {
-    id: 2,
+    id: 5,
     type: "review",
-    title: "empora quam unde ad adipisci nobis fugit",
+    title: "illum, necessitatibus vitae culpa sequi ",
     date: "2022-32-32",
     contents: "lorem loremloremorem ",
+    readingLength: 22,
     thumbnail: "/rimuru.jpg",
   },
 ];

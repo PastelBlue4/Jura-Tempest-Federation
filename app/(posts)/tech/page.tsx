@@ -1,10 +1,6 @@
-/** @format */
-
 "use client";
 
 import PostItem from "@components/Post/PostItem";
-import Image from "next/image";
-import Link from "next/link";
 
 const blogItems = [
   {
@@ -13,38 +9,43 @@ const blogItems = [
     title: "Lorem ipsum dolor sit amet consectetur",
     date: "2022-32-32",
     contents: "lorem loremloremorem  ",
+    readingLength: 22,
     thumbnail: "/rimuru.jpg",
   },
   {
     id: 2,
     type: "tech",
-    title: "adipisicing elit. Soluta natus",
+    title: "Lorem ipsum dolor sit amet consectetur",
     date: "2022-32-32",
-    contents: "lorem loremloremorem ",
+    contents: "lorem loremloremorem  ",
+    readingLength: 22,
     thumbnail: "/rimuru.jpg",
   },
   {
     id: 3,
     type: "tech",
-    title: " Soluta natus nisi quisquam ducimus",
+    title: "Lorem ipsum dolor sit amet consectetur",
     date: "2022-32-32",
-    contents: "lorem loremloremorem ",
+    contents: "lorem loremloremorem  ",
+    readingLength: 22,
     thumbnail: "/rimuru.jpg",
   },
   {
-    id: 1,
+    id: 4,
     type: "review",
     title: "illum, necessitatibus vitae culpa sequi ",
     date: "2022-32-32",
     contents: "lorem loremloremorem ",
+    readingLength: 22,
     thumbnail: "/rimuru.jpg",
   },
   {
-    id: 2,
+    id: 5,
     type: "review",
-    title: "empora quam unde ad adipisci nobis fugit",
+    title: "illum, necessitatibus vitae culpa sequi ",
     date: "2022-32-32",
     contents: "lorem loremloremorem ",
+    readingLength: 22,
     thumbnail: "/rimuru.jpg",
   },
 ];
@@ -54,7 +55,7 @@ export default function Page() {
     <>
       <div className="flex flex-col w-full ">
         <section className="flex flex-col items-center w-full ">
-          <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5">
+          <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2 ">
             {blogItems &&
               blogItems.map((item) => {
                 return <PostItem key={item.id} item={item} />;
