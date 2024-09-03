@@ -1,5 +1,3 @@
-/** @format */
-
 import Navbar from "@components/Navbar/Navbar";
 import { Metadata } from "next";
 import "styles/globals.css";
