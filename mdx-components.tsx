@@ -1,3 +1,4 @@
+import CodeBlock from "@components/CodeBlock/CodeBlock";
 import type { MDXComponents } from "mdx/types";
 import Image, { ImageProps } from "next/image";
 
@@ -14,7 +15,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
     h4: ({ children }) => <h4 style={{ fontSize: "43px" }}>{children}</h4>,
 
-    code: ({ children }) => <code style={{}}>{children}</code>,
+    code: ({ children }) => <CodeBlock codeSyntax={children} />,
 
     p: ({ children }) => <p style={{ color: "blue" }}>{children}</p>,
 

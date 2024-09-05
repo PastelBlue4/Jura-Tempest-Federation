@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneLight } from "react-syntax-highlighter/dist/cjs/styles/prism";
@@ -10,11 +8,21 @@ import rust from "react-syntax-highlighter/dist/cjs/languages/prism/rust";
 import java from "react-syntax-highlighter/dist/cjs/languages/prism/java";
 import go from "react-syntax-highlighter/dist/cjs/languages/prism/go";
 
-export default function CodeBlock() {
-  const codeSyntax = "code code code ";
+SyntaxHighlighter.registerLanguage("javascript", javascript);
+SyntaxHighlighter.registerLanguage("typescript", typescript);
+SyntaxHighlighter.registerLanguage("json", json);
+SyntaxHighlighter.registerLanguage("rust", rust);
+SyntaxHighlighter.registerLanguage("java", java);
+SyntaxHighlighter.registerLanguage("go", go);
+
+export default function CodeBlock({ codeSyntax }: any) {
   return (
     <>
-      <SyntaxHighlighter language="javascript" style={oneLight} showLineNumbers>
+      <SyntaxHighlighter
+        language="javascript"
+        style={oneLight}
+        showLineNumbers={false}
+      >
         {codeSyntax}
       </SyntaxHighlighter>
     </>

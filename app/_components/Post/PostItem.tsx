@@ -18,11 +18,16 @@ export default function PostItem({ item }: PostItemType) {
   return (
     <Link
       href={`/${item.type}/${item.id}`}
-      className="flex flex-col items-center justify-between w-full h-auto max-w-md mx-auto rounded-lg "
+      className="flex flex-col items-center justify-between w-full h-auto max-w-lg mx-auto rounded-lg "
     >
       <div className="w-full overflow-hidden">
         <div className="relative w-full h-64 transition-transform bg-blue-300 rounded-t-md hover:scale-105">
-          <Image src={item.thumbnail} fill alt="" className="object-contain" />
+          <Image
+            src={item.thumbnail}
+            fill
+            alt=""
+            className="hidden object-contain"
+          />
         </div>
       </div>
 
