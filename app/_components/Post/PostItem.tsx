@@ -4,7 +4,7 @@ import React from "react";
 
 type PostItemType = {
   item: {
-    id: number;
+    id: string;
     type: string;
     title: string;
     date: string;

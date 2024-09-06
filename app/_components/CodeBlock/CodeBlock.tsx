@@ -22,6 +22,10 @@ export default function CodeBlock({ codeSyntax }: any) {
         language="javascript"
         style={oneLight}
         showLineNumbers={false}
+        useInlineStyles={false}
+        className={"code"}
+        customStyle={{ color: "blue" }}
+        lineNumberContainerStyle={{ background: "red" }}
       >
         {codeSyntax}
       </SyntaxHighlighter>
