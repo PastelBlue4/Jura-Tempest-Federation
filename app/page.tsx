@@ -1,6 +1,7 @@
 "use client";
 
 import PostItem from "@components/Post/PostItem";
+import { getPostById } from "@libs/post/api";
 import Link from "next/link";
 
 const mainPreviewItems = [
@@ -34,6 +35,8 @@ const mainPreviewItems = [
 ];
 
 export default function Page() {
+  getPostById();
+
   return (
     <>
       <div className="flex flex-col w-full ">
