@@ -1,6 +1,6 @@
 "use client";
 
-import { classNameHandler } from "@libs/client/classNameHandler";
+import { classNameHandler } from "@utils/client/classNameHandler";
 import Image from "next/image";
 import React, { ReactNode, useState } from "react";
 

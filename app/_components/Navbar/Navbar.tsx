@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import { usePathname } from "next/navigation";
-import { classNameHandler } from "@libs/client/classNameHandler";
+import { classNameHandler } from "@utils/client/classNameHandler";
 
 type NavbarItemsTpye = {
   name: string;
@@ -57,7 +57,6 @@ export default function Navbar() {
     );
   };
 
-  console.log(isMobileNavbarButtonOpen);
   return (
     <>
       <nav className="fixed top-0 z-50 flex items-center justify-center w-full h-16 bg-blue-50">

@@ -1,8 +1,15 @@
 import fs from "fs";
 import { join } from "path";
 
-export const getPostById = () => {
-  const postsDirectry = join(process.cwd(), "posts");
+const postsPath = join(process.cwd(), "posts");
 
-  console.log(postsDirectry + "");
+export const getAllPostList = () => {
+  return fs.readdirSync(postsPath).map((slug) => slug.replace(/\.mdx$/, ""));
+};
+
+const getPostById = (id: string) => {
+  const fullPath = join(postsPath, `${id}.mdx`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+
+  return fileContents;
 };
