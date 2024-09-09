@@ -7,7 +7,7 @@ export const getAllPostList = () => {
   return fs.readdirSync(postsPath).map((slug) => slug.replace(/\.mdx$/, ""));
 };
 
-const getPostById = (id: string) => {
+export const getPostById = (id: string) => {
   const fullPath = join(postsPath, `${id}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
