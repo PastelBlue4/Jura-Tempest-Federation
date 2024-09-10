@@ -1,6 +1,5 @@
 import CodeBlock from "@components/CodeBlock/CodeBlock";
-
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { MDXRemote, compileMDX } from "next-mdx-remote/rsc";
 import React from "react";
 
 type Props = {
@@ -8,21 +7,26 @@ type Props = {
 };
 
 export default async function MDX_Viewer({ source }: Props) {
+  const { frontmatter } = await compileMDX({
+    source,
+    options: {
+      parseFrontmatter: true,
+    },
+  });
+
+  console.log(frontmatter);
+
   return (
     <article className="">
       <MDXRemote
         options={{
           parseFrontmatter: true,
-          mdxOptions: {
-            remarkPlugins: [],
-            rehypePlugins: [],
-          },
         }}
         source={source}
         components={{
-          h1: ({ children }) => <h1>{children}</h1>,
+          h1: ({ children }) => <h1 className="text-2xl">{children}</h1>,
           code: ({ children }) => <CodeBlock codeSyntax={children} />,
-          p: ({ children }) => <div>{children}</div>,
+          p: ({ children }) => <p>{children}</p>,
         }}
       />
     </article>

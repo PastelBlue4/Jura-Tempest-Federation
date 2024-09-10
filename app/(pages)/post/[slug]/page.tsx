@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default async function Page({ postId }: Props) {
-  const source = getPostById("test1");
+  const source = getPostById("about-clone-coding");
 
   return (
     <div className="p-3 bg-blue-100">
