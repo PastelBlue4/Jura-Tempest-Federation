@@ -20,7 +20,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         <div className="flex flex-col items-center min-h-screen py-20 bg-blue-50 ">
-          <div className="flex justify-center w-10/12 max-w-screen-lg">
+          <div className="flex justify-center w-10/12 max-w-screen-xl">
             <RecoidContextProvider>{children}</RecoidContextProvider>
           </div>
         </div>

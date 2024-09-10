@@ -1,5 +1,5 @@
 import MDX_Viewer from "@components/MDX_Viewer/MDX_Viewer";
-import { getAllPostList } from "@libs/post/api";
+import { getAllPostList, getPostById } from "@libs/post/api";
 
 export async function generateStaticParams() {
   return getAllPostList().map((id) => ({ id }));
@@ -10,11 +10,11 @@ type Props = {
 };
 
 export default async function Page({ postId }: Props) {
-  console.log(getAllPostList);
+  const source = getPostById("test1");
 
   return (
-    <div>
-      <MDX_Viewer postId={postId ? postId : "test1"} />
+    <div className="p-3 bg-blue-100">
+      <MDX_Viewer source={source} />
     </div>
   );
 }
