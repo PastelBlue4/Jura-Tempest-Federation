@@ -17,7 +17,7 @@ type PostItemType = {
 export default function PostItem({ item }: PostItemType) {
   return (
     <Link
-      href={`/${item.type}/${item.id}`}
+      href={`/post/${item.id}`}
       className="flex flex-col items-center justify-between w-full h-auto max-w-lg mx-auto rounded-lg "
     >
       <div className="w-full overflow-hidden">

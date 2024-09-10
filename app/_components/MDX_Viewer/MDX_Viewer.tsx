@@ -1,15 +1,15 @@
 import CodeBlock from "@components/CodeBlock/CodeBlock";
-import { getPostById } from "@libs/post/api";
-import { MDXRemote, compileMDX } from "next-mdx-remote/rsc";
+
+import { MDXRemote } from "next-mdx-remote/rsc";
 import React from "react";
 
 type Props = {
-  postId: string;
+  source: string;
 };
 
-export default async function MDX_Viewer({ postId }: Props) {
+export default async function MDX_Viewer({ source }: Props) {
   return (
-    <article>
+    <article className="">
       <MDXRemote
         options={{
           parseFrontmatter: true,
@@ -18,10 +18,11 @@ export default async function MDX_Viewer({ postId }: Props) {
             rehypePlugins: [],
           },
         }}
-        source={getPostById(postId)}
+        source={source}
         components={{
           h1: ({ children }) => <h1>{children}</h1>,
           code: ({ children }) => <CodeBlock codeSyntax={children} />,
+          p: ({ children }) => <div>{children}</div>,
         }}
       />
     </article>
