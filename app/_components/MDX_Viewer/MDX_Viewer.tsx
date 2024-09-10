@@ -7,15 +7,6 @@ type Props = {
 };
 
 export default async function MDX_Viewer({ source }: Props) {
-  const { frontmatter } = await compileMDX({
-    source,
-    options: {
-      parseFrontmatter: true,
-    },
-  });
-
-  console.log(frontmatter);
-
   return (
     <article className="">
       <MDXRemote
