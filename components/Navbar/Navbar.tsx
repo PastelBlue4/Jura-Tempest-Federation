@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import { usePathname } from "next/navigation";
-import { classNameHandler } from "@utils/client/classNameHandler";
+import { classNameHandler } from "utils/client/classNameHandler";
 
 type NavbarItemsTpye = {
   name: string;

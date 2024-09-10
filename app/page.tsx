@@ -1,5 +1,4 @@
-import PostItem from "@components/Post/PostItem";
-import { getAllPostList } from "@libs/post/api";
+import PostItem from "components/Post/PostItem";
 import Link from "next/link";
 
 const mainPreviewItems = [

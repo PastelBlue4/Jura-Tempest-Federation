@@ -1,11 +1,12 @@
-interface PostType {
-  id: string;
+type PostType = {
+  slug: string;
+  postId: string;
   title: string;
   date: string;
-  thumbnail: string;
-  excerpt?: string;
+  ogImage: "";
+  description: string;
   content: string;
   tags: string[];
-}
+};
 
 export default PostType;

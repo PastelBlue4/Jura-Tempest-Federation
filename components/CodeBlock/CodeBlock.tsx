@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneLight } from "react-syntax-highlighter/dist/cjs/styles/prism";
