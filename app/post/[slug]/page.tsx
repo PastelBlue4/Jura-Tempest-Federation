@@ -1,12 +1,12 @@
 import MDX_Viewer from "components/MDX_Viewer/MDX_Viewer";
-import { getAllPostList, getPostSourceBySlug } from "lib/post/api";
+import { getAllPostSlugs, getPostSourceBySlug } from "lib/post/api";
 
 type Props = {
   params: { slug: string };
 };
 
 export async function generateStaticParams() {
-  return getAllPostList().map((slug) => ({ slug }));
+  return getAllPostSlugs().map((slug) => ({ slug }));
 }
 
 export default async function Page({ params: { slug } }: Props) {

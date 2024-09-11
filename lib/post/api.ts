@@ -5,7 +5,7 @@ import PostType from "interfaces/post";
 
 const postsPath = join(process.cwd(), "posts");
 
-export const getAllPostList = () => {
+export const getAllPostSlugs = () => {
   return fs.readdirSync(postsPath).map((slug) => slug.replace(/\.mdx$/, ""));
 };
 
@@ -29,4 +29,14 @@ export const getPostSourceBySlug = async (slug: string) => {
     ...serializedData,
     post: { ...serializedData.frontmatter, slug } as PostType,
   };
+};
+
+const getPostFrontmatterBySlug = async (slug: string) => {
+  const fileContents = await getPostSourceBySlug(slug);
+
+  const serializedData = await serialize(fileContents, {
+    parseFrontmatter: true,
+  });
+
+  return { ...serializedData.frontmatter, slug } as PostType;
 };
