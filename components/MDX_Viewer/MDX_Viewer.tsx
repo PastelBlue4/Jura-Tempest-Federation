@@ -1,7 +1,7 @@
 "use client";
 
 import CodeBlock from "components/CodeBlock/CodeBlock";
-import { getPostSourceBySlug } from "post/api";
+import { getPostSourceBySlug } from "lib/post/api";
 import { MDXRemote } from "next-mdx-remote";
 
 type Props = {

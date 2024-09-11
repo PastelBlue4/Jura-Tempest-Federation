@@ -1,5 +1,5 @@
 import MDX_Viewer from "components/MDX_Viewer/MDX_Viewer";
-import { getAllPostList, getPostSourceBySlug } from "post/api";
+import { getAllPostList, getPostSourceBySlug } from "lib/post/api";
 
 type Props = {
   params: { slug: string };

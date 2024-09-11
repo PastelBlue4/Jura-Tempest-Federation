@@ -9,7 +9,7 @@ export const getAllPostList = () => {
   return fs.readdirSync(postsPath).map((slug) => slug.replace(/\.mdx$/, ""));
 };
 
-export const getPostById = (slug: string) => {
+export const getPostMDXBySlug = (slug: string) => {
   const fullPath = join(postsPath, `${slug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
@@ -17,7 +17,7 @@ export const getPostById = (slug: string) => {
 };
 
 export const getPostSourceBySlug = async (slug: string) => {
-  const fileContents = getPostById(slug);
+  const fileContents = getPostMDXBySlug(slug);
   const serializedData = await serialize(fileContents, {
     mdxOptions: {
       format: "mdx",
