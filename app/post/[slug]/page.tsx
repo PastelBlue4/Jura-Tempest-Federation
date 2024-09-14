@@ -12,6 +12,7 @@ export async function generateStaticParams() {
 export default async function Page({ params: { slug } }: Props) {
   const source = await getPostSourceBySlug(slug);
   const post = source.post;
+
   return (
     <article>
       <h1>{post.title}</h1>
