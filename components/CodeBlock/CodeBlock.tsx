@@ -22,7 +22,6 @@ export default function CodeBlock({ codeSyntax }: any) {
   return (
     <>
       <SyntaxHighlighter
-        className=" code"
         language="javascript"
         showLineNumbers={false}
         style={oneLight}
