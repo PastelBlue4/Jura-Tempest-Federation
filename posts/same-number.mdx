@@ -1,0 +1,276 @@
+---
+slug: "same-number"
+title: "오늘의 코테 프로그래머스 [같은 숫자는 싫어]  (나도 싫어) + Array.filter 마스터하기"
+description: "코테 문제를 풀어보며 filter method와 가독성을 고민해 보아용"
+type: "tech"
+ogImage: "/post-asset/same-number/same-number-cover.jpeg"
+date: "2022-08-20"
+tags:
+  - JS
+---
+
+# 문제
+
+문제는 간단하다.
+
+여러 숫자가 있는 배열에서 연속적인 숫자 배열이 있으면 그 숫자 배열중에 하나만 남기고 지워야한다.
+
+```
+array1 = [1,2,3,4,5,6,6,6,7,7,8,8] //와 같은 배열을
+
+afterArray1= [1,2,3,4,5,6,7,8] //로 만들어야한다.
+```
+
+위와 같이 중복되는 숫자를 하나만 남기고 기존 순서를 지켜서 반환해야 한다.
+
+제시된 문제들은
+
+```
+1. [1, 1, 3, 3, 0, 1, 1] >  [1, 3, 0, 1] 을 return 합니다.
+```
+
+```
+2. [4, 4, 4, 3, 3] >  [4, 3] 을 return 합니다.
+```
+
+## 첫번째 시도.
+
+```
+
+function solution(array){
+    var answer = [];
+
+    for(var count = 0; i < arr.length; count++) {
+        if (arr[count] == arr[count+1]){
+         arr.splice(count, 1)
+        }
+    }
+     answer = [...arr]
+     return answer;
+}
+
+```
+
+반복문을 사용하여 해당하는 배열의 값과 다음 값을 비교하여
+
+일치하면 해당 인덱스를 삭제하는 방법이다.
+
+### 결과 & 리뷰
+
+[1, 1, 3, 3, 0, 1, 1] 과 같이 숫자가 적고 3개이상 반복되지 않는 케이스에서는 통과하였지만
+
+바로 다음 케이스를 통과못했다. splice에 대해 분석해보자.
+
+### splice 분석
+
+```
+array.splice(start, select, change)
+
+start 에게는 해당하는 인덱스 번호,
+
+select 에게는 삭제/변경하려는 갯수  (0이면 삭제 안함, 2개면 그 값을 포함하여 2개)
+
+change는 해당 값으로 변경하는데 값을 안주면 삭제만 한다.(옵션)
+
+```
+
+splice로 해결하지 못한 원인은, 삭제시에는 그 자리에 빈 값("")을 두고 리턴 하는게 아니라
+
+해당 배열의 위치까지 삭제하는 방식이라, 뒤에 있는 값들의 위치 변동이 생겨 제대로 된 검증이 안된다.
+
+## 두번째 시도.
+
+```
+function solution(array){
+    var answer = [];
+    for(var count = 0; i < arr.length; count++){
+        if(arr[counst] !== arr[count + 1]){
+           answer.push(arr[count]);
+        }
+    }
+    return answer;
+}
+
+```
+
+처음에 answer 이라는 빈 배열이 주어지는데.
+
+반복문을 통해 각각의 값을 비교하여 중복 되지 않는 값들만 따로
+
+answer 배열에 push()하여 저장하는 방법이다.
+
+```
+array.push() => 값을 해당 배열에 맨뒤에 추가
+ex)
+
+arr = ["123", "456", "789"]
+
+arr.push("123")
+
+arr = ["123", "456", "789", "123"]
+```
+
+### 결과 & 리뷰
+
+성공했다. 제시되었던 모든 테스트 케이스와 효율성 테스트를 통과했다.
+
+주어진 배열의 원본 위치에서 결과를 구현하려는 생각에 사로 잡혔던거 같다.
+
+연산은 기존 배열을 참조하고, 그 결과 값을 새로운 배열을 만들어 반환을 했어야 했는데,
+
+많은걸 배웠다. 하지만 이렇게 끝나진 않았다. 사실 진짜 삽질은 지금 부터다.
+
+# Gosu의 코드
+
+```
+function solution(arr)
+{
+    return arr.filter((val,index) => val != arr[index+1]);
+}
+```
+
+처음본 소감은 간결하다. 이걸로 뭘 할 수라도 있는 건가? 싶을 정도로 짧았다.
+
+감탄만 한다고 해서 내 것이 되진 않는다. 내 것으로 만들어 보자.
+
+## filter 분석기
+
+핵심인 filter를 분석해보자.
+
+filter()는 map()과 유사한데.
+
+array.flter(callbackFn)로 호출을 하면, 함수에 필수 1가지, 옵션 3가지 인자를 넣어
+
+배열의 값의 갯수만큼 반복 실행되는데, 이때 연산 결과에 따라 true/false가 반환되면
+
+**true에 해당하는 값만 새로운 배열에 만들어 저장하고, 종료되면 값을 저장한 배열을 return 한다.**
+
+_(배열의 값들이 하나도 해당 하지않으면 빈 배열을 반환한다.)_
+
+```
+array.filter( callbackFn (currentValue, indexOfValue(옵션), oldArray(옵션), thisArg(옵션)) )
+```
+
+위와 같이 호출 할 수 있는데, callbackFn 안에 있는 인자들에게는 각각
+
+currentValue 에게는 지금 계산중인 값.
+
+indexOfValue 에게는 지금 계산중인 값의 배열상의 순서.
+
+oldArray 에게는 현재 계산중인 배열을 담아준다.
+
+thisArg에는 callbackFn을 실행할 때 this로 사용할 수 있는 값 이란다.
+
+값을 넣어 콘솔을 찍어보면.
+
+```
+array = [1,2,3,4,5]
+
+
+array.filter( (currentValue, indexOfValue, oldArray) => {
+  > currentValue 에게는 지금 계산중인 값.
+  > indexOfValue 에게는 지금 계산중인 값의 배열상 순서.
+  > oldArray 에게는 현재 계산중인 배열.
+
+  console.log(currentValue);
+ > 출력 값 : 1,2,3,4,5
+
+  console.log(indexOfValue);
+ > 출력 값 : 0,1,2,3,4
+
+  console.log(oldArray);
+ > 출력 값 : [1, 2, 3, 4, 5],[1, 2, 3, 4, 5],[1, 2, 3, 4, 5],[1, 2, 3, 4, 5],[1, 2, 3, 4, 5]
+
+  return currentValue > 2;
+
+});
+
+> array.filter()의 출력 값 : : 3,4,5
+```
+
+위와 같이 나오는데 가장 중요한것은 보시다시피, **"반복"**이 된다는 것이다.
+
+그래서 처음에 봤던 한 줄의 아주 짧은 코드로, 배열 내부를 검색하고 비교 코드를 짤 수 있는 것이다.
+
+## 적용시켜보기.
+
+위에서 filter에 대해서 분석 해봤으니 우리의 문제에 적용 시켜보자.
+
+첫 번째 비교 연산 실행에는 currnetValue 에는 1이 들어가고
+
+indexOfValue에는 지금 실행되고 있는 값(currnetValue)의 배열상 순서 0이 들어 갈 것이다.
+
+지금 실행되고 있는 값에 바로 다음의 값과 비교를 해야하니,
+
+```
+currentValue  !==  arr[indexOfvalue + 1]
+```
+
+위와 같은 비교 연산 로직으로 작성 할 수 있겠다.
+
+여기서 true로 반환 되면 array.filter의 배열로 저장이 되는 것이다.
+
+코드를 완성시키면.
+
+```
+array = [1, 1, 3, 3, 0, 1 ,1]
+
+
+function numberFilter (currentValue, indexOfValue){
+//함수 선언후 첫번째 인자로 현재 배열의 값, 두번째 인자로 현재 배열의 값의 위치
+
+ return CurrentValue !== arr[indexOfValue + 1]
+ // 비교 연산 로직 작성
+ };
+
+ array.filter(numberFilter);
+
+ // callbackFuncition 으로 함수 실행.
+
+```
+
+위와 같이 코드를 작성할 수 있겠다.
+
+## 결과.
+
+위와 같이 작성해도 정답처리가 되지만 Arrow function을 통해 아까 봐온 Gosu의 코드 같이
+
+한 줄의 짧은 코드로도 작성할 수 있다.
+
+```
+array.filter((currentValue, indexOfValue) => currentValue !== arr[indexOfValue + 1])
+```
+
+이정도도 짧은 편이지만 동료 개발자와 미래의 나를 배려 안 한다면?
+
+```
+array.filter((n, i) => n !== arr[i + 1])
+```
+
+이렇게까지 줄일 수가 있다.
+
+### 테스트 케이스
+
+```
+const testCaseArray = Array.from(String(Math.random() * 10 ** 17), (i) => parseInt(i));
+```
+
+코드를 여러번 계속 작성하다보니 여러가지 테스트 케이스도 필요했는데
+
+그때마다 1,1,2,12,1,1,2, 이 짓하기가 힘들었는데 옛날에 쓰던 Math.random() 메서드가 생각나서 만들어 봤다.
+
+대충 랜덤으로 만들어진 소숫점을 곱하고 문자열로 만들고 각각 배열로 만들고 다시 숫자로 만들었다.
+
+~~_(사실 이거하면서 시간 제일 많이 잡아먹고 많이 배운거같다.)_~~
+
+# 후기
+
+아침에 잠깐씩 워밍업을 위해 코딩 테스트 문제를 하나씩 푼다는 어떤 분의 말에 나도 한번 아침에 해볼까 하다가
+
+밤 9시에 후기를 적는다. 하지만 자바스크립트 메서드의 종류에 대해서 (특히 filter), 문제 해결능력이
+
+아무것도 안 한 거보다 훨씬 상승했다고 느껴진다.
+
+경험을 쌓고 싶으면 프로젝트를, 실력을 쌓고 싶으면 코딩테스트를 풀어보라는 말이 실감이 났다.
+
+못해도 2~3일에 하나씩 풀고 풀이와 같이 배웠던 점을 적어보려고 한다.

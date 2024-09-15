@@ -1,36 +1,6 @@
 import PostItem from "components/Post/PostItem";
 import Link from "next/link";
 
-const mainPreviewItems = [
-  {
-    id: "titleText1",
-    type: "tech",
-    title: "Lorem ipsum dolor sit amet consectetur",
-    date: "2022-32-32",
-    contents: "lorem loremloremorem  ",
-    readingLength: 5,
-    thumbnail: "/rimuru.jpg",
-  },
-  {
-    id: "titleText222",
-    type: "tech",
-    title: "Lorem ipsum dolor sit amet consectetur",
-    date: "2022-32-32",
-    contents: "lorem loremloremorem  ",
-    readingLength: 10,
-    thumbnail: "/rimuru.jpg",
-  },
-  {
-    id: "titleText33333",
-    type: "tech",
-    title: "Lorem ipsum dolor sit amet consectetur",
-    date: "2022-32-32",
-    contents: "lorem loremloremorem  ",
-    readingLength: 15,
-    thumbnail: "/rimuru.jpg",
-  },
-];
-
 export default function Page() {
   return (
     <>
@@ -85,12 +55,7 @@ export default function Page() {
           </div>
         </section>
         <section className="flex flex-col items-center w-full py-5 ">
-          <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2 ">
-            {mainPreviewItems &&
-              mainPreviewItems.map((item) => {
-                return <PostItem key={item.id} item={item} />;
-              })}
-          </div>
+          <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2 "></div>
         </section>
       </div>
     </>
