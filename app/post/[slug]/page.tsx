@@ -14,9 +14,10 @@ export default async function Page({ params: { slug } }: Props) {
   const post = source.post;
 
   return (
-    <article>
-      <h1>{post.title}</h1>
-      <div className="p-3 bg-blue-100">
+    <article className="w-full bg-blue-100">
+      <h1 className="text-2xl font-semibold text-center">{post.title}</h1>
+
+      <div className="w-full p-1 ">
         <MDX_Viewer source={source} />
       </div>
     </article>

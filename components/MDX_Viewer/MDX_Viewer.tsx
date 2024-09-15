@@ -9,7 +9,7 @@ type Props = {
 };
 export default function MDX_Viewer({ source }: Props) {
   return (
-    <article className="">
+    <article className="w-full ">
       <MDXRemote
         {...source}
         components={{

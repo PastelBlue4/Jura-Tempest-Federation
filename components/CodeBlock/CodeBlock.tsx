@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import "./codeBlockStyle.css";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneLight } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import javascript from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
@@ -21,13 +22,10 @@ export default function CodeBlock({ codeSyntax }: any) {
   return (
     <>
       <SyntaxHighlighter
+        className=" code"
         language="javascript"
-        style={oneLight}
         showLineNumbers={false}
-        useInlineStyles={false}
-        className={"code"}
-        customStyle={{ color: "blue" }}
-        lineNumberContainerStyle={{ background: "red" }}
+        style={oneLight}
       >
         {codeSyntax}
       </SyntaxHighlighter>
