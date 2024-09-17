@@ -1,3 +1,10 @@
-code {
+.codeContainer {
+  background-color: rgb(239 246 255) !important;
+  margin: 1.5rem 0rem !important;
+}
+
+.codeContainer code {
   white-space: break-spaces !important;
+  background-color: rgb(239 246 255) !important;
+  font-size: 0.85rem;
 }

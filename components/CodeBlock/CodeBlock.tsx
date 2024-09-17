@@ -23,10 +23,7 @@ export default function CodeBlock({ codeSyntax }: any) {
     <>
       <SyntaxHighlighter
         language="javascript"
-        className="my-10"
-        customStyle={{
-          margin: "12px 0px",
-        }}
+        className="codeContainer"
         showLineNumbers={false}
         style={oneLight}
       >
