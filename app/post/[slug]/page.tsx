@@ -14,7 +14,7 @@ export default async function Page({ params: { slug } }: Props) {
   const post = source.post;
 
   return (
-    <article className="w-full bg-blue-100 py-7">
+    <article className="w-full py-6 bg-gray-50">
       <h1 className="text-xl font-semibold text-center lg:text-2xl ">
         {post.title}
       </h1>
