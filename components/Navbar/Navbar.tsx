@@ -14,9 +14,7 @@ type NavbarItemsTpye = {
 const NavbarItmes: NavbarItemsTpye[] = [
   { name: "Home", href: "/" },
   { name: "Romuru", href: "/romuru-tempest" },
-  { name: "Tech", href: "/tech" },
-  { name: "Review", href: "/review" },
-  { name: "Life", href: "/life" },
+  { name: "post", href: "/post" },
 ];
 
 export default function Navbar() {
